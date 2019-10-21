@@ -1,0 +1,47 @@
+"####### Genérico","###########################################################"
+"Value","Valor"
+"Month","Mês"
+"Year","Ano"
+"with", "com"
+"of","de"
+"Invalid Date","Data inválida"
+"without interest", "sem juros"
+"% of interest","% de juros"
+"Fill the value for this card","Preencha o valor para este cartão"
+"Invalid payment data", "Dados de pagamento inválidos"
+
+"####### Boleto","#############################################################"
+"Billet", "Boleto",
+"Tax/VAT", "CPF ou CNPJ",
+"Invalid CPF","CPF inválido",
+
+"####### Cartão de crédito","##################################################"
+"Credit Card", "Cartão de Crédito"
+"Select a Card", "Selecionar um cartão"
+"Fill Data", "Preencher Dados"
+"Card number", "Número do cartão"
+"Holder Name", "Nome do titular"
+"Expiration date", "Validade"
+"Installments", "Parcelamento"
+"Fill the card number","Preencha o número do cartão"
+"Save this card to future orders","Salvar este cartão para compras futuras"
+"Invalid Credit Card", "Cartão de crédito inválido"
+"Unavailable brand", "Bandeira indisponível"
+
+"####### Informações extras de checkout","#####################################"
+"Click <a href='%s' target='__blank'>here</a> to show your billet for <strong>%s %s</strong> payment.", "Clique <a href='%s' target='__blank'>aqui</a> para mostrar seu boleto para o pagamento de <strong>%s %s</strong>."
+
+"####### Multi buyer","##################################################"
+"Fill other buyer data", "Informar dados de outro comprador"
+"Full name", "Nome completo"
+"Zipcode", "Cep"
+"Street", "Rua"
+"Number", "Número"
+"Complement", "Complemento"
+"Neighborhood", "Bairro"
+"City", "Cidade"
+"State", "Estado"
+"Country", "País"
+"Select an Country", "Selecione um País"
+"Select", "Selecione",
+"Subtotal", "Subtotal"

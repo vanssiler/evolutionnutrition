@@ -1,0 +1,33 @@
+#Mundipagg Magento Module
+
+#App
+app/code/community/Mundipagg/Paymentmodule                      app/code/community/Mundipagg/Paymentmodule
+app/etc/modules/Mundipagg_Paymentmodule.xml                     app/etc/modules/Mundipagg_Paymentmodule.xml
+
+app/design/frontend/base/default/template/paymentmodule         app/design/frontend/base/default/template/paymentmodule
+app/design/adminhtml/default/default/template/paymentmodule     app/design/adminhtml/default/default/template/paymentmodule
+
+#app/design/frontend/base/default/layout/paymentmodule.xml      app/design/frontend/base/default/layout/paymentmodule.xml
+app/design/frontend/base/default/layout/paymentmodule.xml       app/design/frontend/base/default/layout/paymentmodule.xml
+app/design/adminhtml/default/default/layout/paymentmodule.xml   app/design/adminhtml/default/default/layout/paymentmodule.xml
+
+#Skin
+skin/adminhtml/default/default/images/mundipagg                 skin/adminhtml/default/default/images/mundipagg
+skin/frontend/base/default/css/paymentmodule.css                skin/frontend/base/default/css/paymentmodule.css
+
+#locale
+app/locale/en_US/mundipagg_adminhtml_locale.csv                 app/locale/en_US/mundipagg_adminhtml_locale.csv
+app/locale/en_US/mundipagg_frontend_locale.csv                  app/locale/en_US/mundipagg_frontend_locale.csv
+
+app/locale/pt_BR/mundipagg_adminhtml_locale.csv                 app/locale/pt_BR/mundipagg_adminhtml_locale.csv
+app/locale/pt_BR/mundipagg_frontend_locale.csv                  app/locale/pt_BR/mundipagg_frontend_locale.csv
+
+#Others
+lib/*                                                           lib/
+js/lib/jquery/mp-jquery-1.12.0.min.js                           js/lib/jquery/mp-jquery-1.12.0.min.js
+js/mundipagg/*                                                  js/mundipagg/
+mundipagg_payment_module.xml                                    var/connect/mundipagg_payment_module.xml
+
+#this file
+modman .modman/magento/app/code/community/Mundipagg/Paymentmodule/etc/maintenance/modman
+modman .modman/magento/app/code/community/Mundipagg/Paymentmodule/Concrete/modman

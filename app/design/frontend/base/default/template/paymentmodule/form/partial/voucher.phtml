@@ -1,0 +1,231 @@
+<?php
+$_code = $this->getCode();
+$elementIndex = $this->getElementIndex();
+$elementId = $_code . "_voucher_". $elementIndex;
+$elementClass = $_code . "_voucher";
+$isMultiPayment = $this->getShowValueInput();
+$grandTotal = $this->getGrandTotal();
+$savedCreditCards = $this->getSavedCreditCards();
+$isSavedCreditCardsEnabled = $this->isSavedCreditCardsEnabled();
+$enabledBrands = $this->getEnabledBrands();
+$customerDocument = $this->getCustomerDocument();
+
+    $new = '';
+    if ($savedCreditCards) {
+        $new = "style='display: none'";
+    }
+?>
+
+<div class="input-box <?php echo "$elementClass"?>_tokenDiv"
+     id="<?php echo "$elementId"?>_tokenDiv"
+     data-mundicheckout-app-id="<?php echo $this->getPublicKey(); ?>">
+
+    <?php if ($isMultiPayment) { ?>
+        <h6><?php echo $this->__('Voucher') . ' ' . $elementIndex; ?></h6>
+    <?php } ?>
+
+    <div class="input-box" id="<?php echo "$elementId"?>_brandDiv">
+        <?php
+            $brandUrl = 'https://dashboard.mundipagg.com/emb/images/brands/';
+
+            foreach ($enabledBrands as $brand) {
+                $brandImage = $brandUrl . $brand . '.jpg';
+        ?>
+            <img
+                src="<?php echo $brandImage; ?>"
+                class="mundipagg-brand-image <?php echo $brand; ?>"
+                brand-name="<?php echo $brand; ?>"
+            />
+        <?php } ?>
+        <br><br>
+    </div>
+
+    <?php if($isMultiPayment === true) : ?>
+        <div class="input-box">
+            <label><?php echo $this->__('Value'); ?> (Ex: 100.50)<span class="required"></span></label><br/>
+            <input
+                    type="number"
+                    step=".01"
+                    min="0"
+                    id="<?php echo "$elementId"?>_value"
+                    name="payment[<?php echo "$elementId"?>_value]"
+                    title="<?php echo $this->__('Value'); ?> (Ex: 100,50)"
+                    class="required-entry multipayment-value-input"
+                    onchange="getBrandWithDelay('<?php echo $elementId?>');"
+                    value=""
+                    class="mundipagg-grand-total"
+            >
+        </div>
+        <br>
+    <?php else: ?>
+        <div class="input-box">
+            <input
+                    type="hidden"
+                    id="<?php echo $elementId; ?>_value"
+                    name="payment[<?php echo $elementId; ?>_value]"
+                    value="<?php echo $grandTotal; ?>"
+                    class="mundipagg-grand-total"
+                    >
+        </div>
+    <?php endif; ?>
+
+    <?php if ($savedCreditCards && $isSavedCreditCardsEnabled) { ?>
+        <label for="<?php echo "$elementId"?>_mundicheckout-creditCard-SavedCreditCard"><?php echo $this->__('Select a Card'); ?><span class="required"></span></label>
+        <div class="input-box">
+            <select
+                    name="payment[<?php echo "$elementId"?>_SavedCreditCard]"
+                    id="<?php echo "$elementId"?>_mundicheckout-SavedCreditCard"
+                    onchange="getFormData('<?php echo $elementId?>'); switchNewSaved(this.value, '<?php echo $elementId?>'), fillSavedCreditCardInstallments('<?php echo $elementId?>')"
+                    elementIndex="<?php echo $elementIndex?>"
+                    elementId="<?php echo $elementId?>"
+                    class="savedCreditCardSelect"
+            >
+                <?php foreach ($savedCreditCards as $card) { ?>
+                    <option
+                            value="<?php echo $card->getMundipaggCardId(); ?>"
+                            data-brand="<?php echo $card->getBrandName(); ?>"
+                    ><?php
+                        echo
+                            $card->getBrandName() .
+                            ' xxxx-xxxx-xxxx-' .
+                            $card->getLastFourDigits()
+                        ?></option>
+                <?php } ?>
+                <option value="new" data-brand=""><?php echo $this->__('Fill Data'); ?></option>
+            </select>
+            <br>
+        </div>
+    <?php } ?>
+
+    <input type="hidden"
+           id="<?php echo "$elementId"?>_brand_name"
+           name="payment[<?php echo "$elementId"?>_brand_name]">
+
+    <label for="<?php echo "$elementId"?>_mundicheckout-number" class="newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <?php echo $this->__('Card number'); ?><span class="required"></span>
+    </label>
+    <div class="input-box newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <input type="hidden" id="<?php echo "$elementId"?>_mundipaggBrandName" value="">
+        <input
+                type="text"
+                data-mundicheckout-input="<?php echo "$elementId"?>_number"
+                class="required-entry validate-cc-number mundipaggInput"
+                id="<?php echo "$elementId"?>_mundicheckout-number"
+                onkeyup="getFormData('<?php echo $elementId?>'); getBrand('<?php echo $elementId?>');"
+                onchange="getFormData('<?php echo $elementId?>'); getBrand('<?php echo $elementId?>');"
+                maxlength="19"
+        >
+
+        <input type="hidden" id="<?php echo "$elementId"?>_mundicheckout-cpf" value="<?php echo $customerDocument; ?>" />
+
+        <div
+                id="<?php echo "$elementId"?>_disabled_brand_message"
+                style="display: none;"
+                class="disabledBrandMessage validation-advice"
+        ><?php echo $this->__('Unavailable brand'); ?></div>
+    </div>
+
+    <label
+            for="<?php echo "$elementId"?>_mundicheckout-holdername"
+            class="newCreditCard-<?php echo $elementId?>"
+            <?php echo $new; ?>
+    ><?php echo $this->__('Holder Name'); ?><span class="required"></span></label>
+    <div class="input-box newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <input
+                type="text"
+                data-mundicheckout-input="<?php echo "$elementId"?>_holder_name"
+                class="required-entry"
+                id="<?php echo "$elementId"?>_mundicheckout-holdername"
+                onkeyup="getFormData('<?php echo $elementId?>');"
+                name="payment[<?php echo "$elementId"?>_holderName]"><br>
+    </div>
+
+    <label
+            for="<?php echo "$elementId"?>_mundicheckout-expmonth"
+            class="newCreditCard-<?php echo $elementId?>"
+            <?php echo $new; ?>
+    ><?php echo $this->__('Expiration date'); ?><span class="required"></span></label>
+    <div class="input-box newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <div class="v-fix">
+            <select
+                    class="required-entry"
+                    id="<?php echo "$elementId"?>_mundicheckout-expmonth"
+                    onchange="getFormData('<?php echo $elementId?>');"
+                    name="payment[<?php echo "$elementId"?>_expMonth]"
+            >
+                <option value="">--- <?php echo $this->__('Month'); ?> --- </option>
+                <?php for ($month = 1; $month < 13; $month++ ) { ?>
+                    <option value="<?php echo str_pad($month, "2", "0", STR_PAD_LEFT); ?>">
+                        <?php
+                        echo str_pad($month, "2", "0", STR_PAD_LEFT);
+                        ?>
+                    </option>
+                <?php } ?>
+
+            </select>
+        </div>
+        <div class="v-fix">
+            <select
+                    class="required-entry"
+                    id="<?php echo "$elementId"?>_mundicheckout-expyear"
+                    onchange="getFormData('<?php echo $elementId?>');"
+                    name="payment[<?php echo "$elementId"?>_expYear]"
+            >
+                <option value="">--- <?php echo $this->__('Year'); ?> --- </option>
+                <?php for ($year = date("Y"); $year < date("Y") + 11; $year++ ) { ?>
+                    <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+    </div>
+    <input
+            type="hidden"
+            class="<?php echo $elementClass; ?>_validate-mundipagg-creditcard-exp"
+            id="<?php echo "$elementId"?>_mundicheckout-expiration-date"><br>
+
+    <label
+        for="<?php echo "$elementId"?>_mundicheckout-cvv"
+        class="newCreditCard-<?php echo $elementId?>"
+        <?php echo $new; ?>
+    >CVV<span class="required">*</span></label>
+    <div class="input-box newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <input
+                type="text"
+                data-mundicheckout-input="<?php echo "$elementId"?>_cvv"
+                class="required-entry validate-number"
+                id="<?php echo "$elementId"?>_mundicheckout-cvv"
+                onkeyup="getFormData('<?php echo $elementId?>');"
+                maxlength="4"
+        >
+        <br>
+    </div>
+
+    <?php
+        $isLogged = $this->helper('customer')->isLoggedIn();
+        if ($isLogged && $isSavedCreditCardsEnabled) :
+    ?>
+    <div class="input-box newCreditCard-<?php echo $elementId?>" <?php echo $new; ?>>
+        <br>
+        <input
+                type="checkbox"
+                id="<?php echo "$elementId"?>_mundicheckout-save-credit-card"
+                name="payment[<?php echo "$elementId"?>_saveCreditCard]"
+                onchange="toogleSavedCreditCard('<?php echo "$elementId"?>');"
+        >
+        <label for="<?php echo "$elementId"?>_mundicheckout-save-credit-card"><?php echo $this->__('Save this card to future orders'); ?></label>
+        <br>
+    </div>
+    <?php endif; ?>
+
+    <input
+            type="hidden"
+            id="<?php echo "$elementId"?>_mundicheckout-token"
+            name="payment[<?php echo "$elementId"?>_token]">
+    <br>
+
+</div>
+<p>
+<div class="validation-advice hidden" id="<?php echo "$elementId"?>_mundipagg-invalid-credit-card" style="">
+    <?php echo $this->__('Invalid voucher card'); ?>
+</div>
+</p>

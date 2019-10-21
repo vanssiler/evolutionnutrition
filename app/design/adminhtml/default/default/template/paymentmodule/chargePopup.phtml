@@ -1,0 +1,156 @@
+<div id="message-popup-window-mask" style="height:100%; display:none"></div>
+<div id="charge-dialog" class="message-popup show">
+    <div class="message-popup-head">
+        <h2>
+            <?php echo $this->__("<span class='charge-operation'></span> Charge");?>
+        </h2>
+    </div>
+    <div class="message-popup-content">
+        <div class="message">
+            <div>
+                <h3><?php echo $this->__('Charge Information');?>:</h3>
+                <ul>
+                    <li>Id: <strong><span id="charge-id"></span></strong></li>
+                    <li>
+                        <?php echo $this->__('Value');?>:
+                        <strong><span id="charge-stringValue"></span></strong>
+                    </li>
+                    <li>
+                        <?php echo $this->__('Payment Method');?>:
+                        <strong><span id="charge-typeName"></span></strong>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <form >
+                <fieldset>
+                    <div>
+                        <?php echo $this->__(
+                            "How would you like to " .
+                            "<strong>" .
+                                "<span class='charge-operation'></span>" .
+                            "</strong>" .
+                            " this charge?");
+                        ?>
+                    </div>
+                    <br />
+                    <div>
+                        <label>
+                            <input
+                                    type="radio"
+                                    name="total_or_partial"
+                                    class="total_or_partial"
+                                    checked=""
+                                    value="total"
+                            >
+                            <span>
+                                <?php echo $this->__(
+                                    "Total <span class='charge-operation'></span>"
+                                ); ?>
+                            </span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input
+                                    type="radio"
+                                    name="total_or_partial"
+                                    class="total_or_partial"
+                                    value="partial"
+                            >
+                            <span>
+                                <?php echo $this->__(
+                                    "Partial <span class='charge-operation'></span>"
+                                );?>
+                            </span>
+                        </label>
+                    </div>
+                    <div id="charge-operation-value-wrapper" style='display:none'>
+                        <br/>
+                        <div>
+                            <label>
+                                <span>
+                                    <?php echo $this->__(
+                                        "Value to <span class='charge-operation'></span>"
+                                    );?>:
+                                </span>
+                                <input
+                                        type="number"
+                                        min="0"
+                                        step='.01'
+                                        name="charge-operation-value"
+                                        id="charge-operation-value"
+                                >
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+                <hr />
+                <br />
+                <fieldset>
+                    <div><?php echo $this->__(
+                        "To continue this operation, please enter your password"
+                        );?>:
+                    </div>
+                    <div>
+                        <input
+                                type="password"
+                                name="charge-operation-credential"
+                                id="charge-operation-credential"
+                        >
+                    </div>
+                </fieldset>
+                <br />
+            </form>
+        </div>
+        <div
+                id="charge-dialog-errors"
+                class="notification-global notification-global-warning"
+        ></div>
+        <div class="read-more button-set">
+            <button
+                    class="form-button"
+                    onclick="confirmChargeOperation();"
+            >
+                <?php echo $this->__("<span class='charge-operation'></span> Charge");?>
+            </button>
+            <button class="form-button back" onclick="hideChargeDialog();">
+                <?php echo $this->__("Close");?>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="charge-dialog-wait-modal" style="display:none">
+    <div class="message-popup-head">
+        <h2>Please wait...</h2>
+    </div>
+    <div class="message-popup-content">
+        <div class="message">
+            <div style="text-align: center">
+                <img
+                    src=
+                    "<?php echo $this->getSkinUrl(
+                            'images/ajax-loader-tr.gif',
+                            array('_secure'=>true)
+                    );
+                    ?>"
+                    alt="loader"
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var currentOrderId = <?php echo $this->getOrderId(); ?>;
+    var currentUsername = '<?php echo $this->getAdminUsername(); ?>';
+    hideChargeDialog();
+
+    document.onreadystatechange = () => {
+        if (document.readyState === 'complete') {
+            setTimeout(goToCharges,0);
+        }
+    };
+</script>

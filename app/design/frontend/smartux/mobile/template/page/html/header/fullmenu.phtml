@@ -1,0 +1,43 @@
+<?php
+$category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
+$categories = $category->getCollection()
+    ->addAttributeToSelect(array('name', 'thumbnail'))
+    ->addAttributeToFilter('is_active', 1)
+    ->addAttributeToFilter('level',2)
+?>
+<div class="fullmenu_wrapper">
+    <ul id="fullmenu">
+        <?php foreach ($categories as $category): ?>
+            <li class="level0">
+                <a href="<?php echo $category->getUrl() ?>"><?php echo $category->getName() ?></a>
+                <?php $_subcategories = $category->getChildrenCategories() ?>
+                <?php if (count($_subcategories) > 0): ?>
+                    <ul class="submenu">
+                        <?php foreach($_subcategories as $_subcategory): ?>
+                            <li class="level1">
+                                <a href="<?php echo $category->getCategoryUrl($_subcategory) ?>">
+                                    <?php echo $_subcategory->getName() ?>
+                                    <!--sub sub category-->
+                                    <?php $_subcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                                    <?php $_subsubcategories = $_subcategory->getChildrenCategories() ?>
+                                    <?php if (count($_subsubcategories) > 0): ?>
+                                        <ul class="submenu-children">
+                                            <?php foreach($_subsubcategories as $_subsubcategory): ?>
+                                                <li class="level2">
+                                                    <a href="<?php echo $category->getCategoryUrl($_subsubcategory) ?>">
+                                                        <?php echo $_subsubcategory->getName() ?>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                    <!--sub sub category-->
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

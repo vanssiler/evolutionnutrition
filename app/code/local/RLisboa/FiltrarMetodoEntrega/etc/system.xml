@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <myconf translate="label">
+            <label>Rafael Lisboa</label>
+            <sort_order>150</sort_order>
+        </myconf>
+    </tabs>
+    <sections>
+        <filtrarmetodoentrega translate="label" module="adminhtml">
+            <label>Filtrar Métodos de Entrega</label>
+            <tab>myconf</tab>
+            <sort_order>15</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general_filtrarmetodoentrega translate="label comment">
+                    <label>Configurações básicas</label>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+					
+                    <comment>Configurações básicas do módulo</comment>
+                    <fields>
+                       <form_filtrarmetodoentrega translate="label comment">
+                            <label>Habilitar?</label>
+                           
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </form_filtrarmetodoentrega>
+                    </fields>
+                </general_filtrarmetodoentrega>
+				
+				
+				<creation translate="label comment">
+                    <label>Sobre</label>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<comment><![CDATA[<strong>Desenvolvido por:</strong> <i>Rafael Lisboa</i>.<br /><strong>Data: </strong><i>07/2019</i>. <br /><strong>Contato: </strong><a href="https://eurafaellisboa.com.br/programador-wordpress-e-magento" target="_blank">Acesse o Site</a>]]></comment>
+				</creation>		
+            </groups>
+        </filtrarmetodoentrega>
+		
+
+    </sections>
+</config>

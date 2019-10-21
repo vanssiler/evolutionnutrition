@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <integrationconfig translate="label" module="smartuxintegra">
+            <label>Smartux Integrações</label>
+            <sort_order>100</sort_order>
+        </integrationconfig>
+    </tabs>
+
+    <sections>
+        <smartuxintegra_options translate="label" module="smartuxintegra">
+            <label>Redes sociais</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>integrationconfig</tab>
+            <groups>
+                <socialurl translate="label">
+                    <label>Links</label>
+                    <comment>Copie e cole os links das redes sociais da loja nos campos correspondentes</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <blog_field translate="label comment">
+                            <label>Blog</label>
+                            <comment>Link do Blog</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                        </blog_field>
+                        <linkedin_field translate="label comment">
+                            <label>LinkedIn</label>
+                            <comment>Link do LinkedIn</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                        </linkedin_field>
+                        <pinterest_field translate="label comment">
+                            <label>Pinterest</label>
+                            <comment>Link do Pinterest</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                        </pinterest_field>
+                        <youtube_field translate="label comment">
+                            <label>Youtube</label>
+                            <comment>Link do youtube</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                        </youtube_field>
+                        <gplus_field translate="label comment">
+                            <label>Google Plus</label>
+                            <comment>Link do Google Plus</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                        </gplus_field>
+                        <instagram_field translate="label comment">
+                            <label>Instagram</label>
+                            <comment>Link do instagram</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                        </instagram_field>
+                        <twitter_field translate="label comment">
+                            <label>Twitter</label>
+                            <comment>Link do twitter</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                        </twitter_field>
+                        <facebook_field translate="label tooltip comment">
+                            <label>Facebook</label>
+                            <comment>Link do Facebook</comment>
+                            <tooltip>Cole aqui o link da FAN PAGE da sua loja</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                        </facebook_field>
+                    </fields>
+                </socialurl>
+            </groups>
+        </smartuxintegra_options>
+    </sections>
+
+</config>

@@ -1,0 +1,121 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$logo_path = Mage::getStoreConfig('design/header/logo_src');
+$logo_src = $this->getSkinUrl().'/'.$logo_path;
+$logo_alt = Mage::getStoreConfig('design/header/logo_alt');
+$storePhone = Mage::getStoreConfig('general/store_information/phone');
+$storeMail = Mage::getStoreConfig('trans_email/ident_general/email');
+$horario = $this->getLayout()->createBlock('cms/block')->setBlockId('horario-atendimento')->toHtml();
+$facebook = Mage::getStoreConfig('smartuxintegra_options/socialurl/facebook_field');
+$twitter = Mage::getStoreConfig('smartuxintegra_options/socialurl/twitter_field');
+$instagram = Mage::getStoreConfig('smartuxintegra_options/socialurl/instagram_field');
+$plus = Mage::getStoreConfig('smartuxintegra_options/socialurl/gplus_field');
+$youtube = Mage::getStoreConfig('smartuxintegra_options/socialurl/youtube_field');
+$pinterest = Mage::getStoreConfig('smartuxintegra_options/socialurl/pinterest_field');
+$linkedin = Mage::getStoreConfig('smartuxintegra_options/socialurl/linkedin_field');
+$blog = Mage::getStoreConfig('smartuxintegra_options/socialurl/blog_field');
+$pagamento = $this->getLayout()->createBlock('cms/block')->setBlockId('formas-pagamento')->toHtml();
+$envio = $this->getLayout()->createBlock('cms/block')->setBlockId('formas-envio')->toHtml();
+$ressalva = $this->getLayout()->createBlock('cms/block')->setBlockId('ressalva')->toHtml();
+?>
+<div class="footer">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-sm-3">
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $logo_alt ?>" class="logo"><img src="<?php echo $logo_src; ?>" alt="<?php echo $logo_alt ?>" /></a>
+                <ul class="contacts">
+                    <li class="telefone"><i class="icon-phone"></i> <strong><?php echo $storePhone?></strong></li>
+                    <li class="email"><i class="icon-mail4"></i> <span><?php echo $storeMail?></span></li>
+                    <li class="horario"><span><i class="icon-clock"></i> <?php echo $horario?></span></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h3>Institucional</h3>
+                <ul class="pages">
+                    <li><a href="/sobre">Quem Somos</a></li>
+                    <li><a href="/politica">Política de Privacidade</a></li>
+                    <li><a href="/como-comprar">Como Comprar</a></li>
+                    <li><a href="/pagamento-e-envio">Pagamento e envio</a></li>
+                    <li><a href="/trocas-e-devolucoes">Trocas e devoluções</a></li>
+                    <li><a href="/contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h3>Redes Sociais</h3>
+                <ul class="social">
+                    <?php if ($facebook) : ?>
+                        <li><a href="<?php echo $facebook ?>" target="_blank" class="ico-fb" title="Facebook"><i class="icon-facebook"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($twitter) : ?>
+                        <li><a href="<?php echo $twitter ?>" target="_blank" class="ico-tt" title="Twitter"><i class="icon-twitter"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($instagram) : ?>
+                        <li><a href="<?php echo $instagram ?>" target="_blank" class="ico-it" title="Instagram"><i class="icon-instagram"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($plus) : ?>
+                        <li><a href="<?php echo $plus ?>" target="_blank" class="ico-gp" title="Google Plus"><i class="icon-google-plus"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($youtube) : ?>
+                        <li><a href="<?php echo $youtube ?>" target="_blank" class="ico-yt" title="Youtube"><i class="icon-youtube"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($pinterest) : ?>
+                        <li><a href="<?php echo $pinterest ?>" target="_blank" class="ico-pt" title="Pinterest"><i class="icon-pinterest"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($linkedin) : ?>
+                        <li><a href="<?php echo $linkedin ?>" target="_blank" class="ico-li" title="LinkedIn"><i class="icon-linkedin"></i></a></li>
+                    <?php endif; ?>
+                    <?php if ($blog) : ?>
+                        <li><a href="<?php echo $blog ?>" target="_blank" class="ico-bl" title="Blog"><i class="icon-blogger"></i></a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h3>Acompanhe</h3>
+                <div class="fb-page" data-href="<?php echo $facebook ?>" data-width="500" data-height="270" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="<?php echo $facebook ?>"><a href="<?php echo $facebook ?>">Facebook</a></blockquote></div></div>
+            </div>
+        </div>
+        <div class="row footer-bottom">
+            <div class="col-sm-6">
+                <h3>Formas de Pagamento</h3>
+                <?php echo $pagamento?>
+            </div>
+            <div class="col-sm-6">
+                <h3>Formas de Envio</h3>
+                <?php echo $envio?>
+            </div>
+        </div>
+    </div>
+    <div class="ressalva">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php echo $ressalva; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->getChildHtml('smartux') ?>

@@ -1,0 +1,30 @@
+<config>
+    <global>
+        <helpers>
+            <smartuxintegra>
+                <class>Smartux_Smartuxintegration_Helper</class>
+            </smartuxintegra>
+        </helpers>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <smartuxintegra_options>
+                                            <title>Smartux Module Section</title>
+                                        </smartuxintegra_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

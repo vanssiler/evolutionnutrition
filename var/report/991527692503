@@ -1,0 +1,9 @@
+a:5:{i:0;s:353:"Error in file: "/Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/community/Mundipagg/Paymentmodule/sql/mundipagg_paymentmodule_setup/install-0.1.0.php" - SQLSTATE[HY000]: General error: 1293 Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause";i:1;s:1404:"#0 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/Resource/Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '2.3.1')
+#2 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('2.3.1')
+#3 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/App.php(428): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core/Mage/Core/Model/App.php(354): Mage_Core_Model_App->_initModules()
+#6 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/Mage.php(683): Mage_Core_Model_App->run(Array)
+#7 /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:6:"/admin";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

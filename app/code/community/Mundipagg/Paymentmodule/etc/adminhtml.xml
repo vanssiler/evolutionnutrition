@@ -1,0 +1,22 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mundipagg_config translate="title" module="paymentmodule">
+                                        <title>Mundipagg</title>
+                                        <sort_order>666</sort_order>
+                                    </mundipagg_config>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

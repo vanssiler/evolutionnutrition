@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <RLisboa_AlertaProduto>
+            <version>1.0.0.0</version>
+        </RLisboa_AlertaProduto>
+    </modules>
+    <global>
+        <models>
+            <productalert>
+                <rewrite>
+                    <observer>RLisboa_AlertaProduto_Model_Observer</observer>
+                </rewrite>
+            </productalert>
+        </models>
+    </global>
+</config>

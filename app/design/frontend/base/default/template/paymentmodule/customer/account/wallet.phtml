@@ -1,0 +1,41 @@
+<div class="my-cards">
+    <div class="page-title title-buttons">
+        <h1><?php echo $this->getTitle(); ?></h1>
+    </div>
+
+    <form>
+        <div class="fieldset">
+            <?php if ($this->hasSavedCards()) : ?>
+                <table class="data-table" id="savedcreditcard-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Brand</th>
+                            <th>Last Four Digits</th>
+                            <th>Expiration Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($this->getSavedCreditCards() as $index => $card) :?>
+                        <tr>
+                            <td><?php echo $index + 1; ?></td>
+                            <td><?php echo $card->brand_name; ?></td>
+                            <td><?php echo $card->last_four_digits; ?></td>
+                            <td><?php echo $card->expiration_date; ?></td>
+                            <td><a href="delete?cardId=<?php echo $card->id; ?>">Excluir</a></td>
+                        </tr>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+                <script type="text/javascript">decorateTable('savedcreditcard-table')</script>
+            <?php else : ?>
+                <p class="wishlist-empty"><?php echo $this->__('You have no saved creditcards.') ?></p>
+            <?php endif ?>
+        </div>
+    </form>
+</div>
+<?php echo $this->getChildHtml('bottom'); ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+</div>

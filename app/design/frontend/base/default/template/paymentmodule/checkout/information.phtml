@@ -1,0 +1,40 @@
+<div id="mundipagg-checkout-success-order-info" style="display:none">
+    <?php $billetData = $this->getBilletData(); ?>
+    <br />
+    <?php if(!empty($billetData)) : ?>
+        <?php foreach($billetData as $billet) : ?>
+            <?php
+                echo sprintf(
+                    $this->__(
+                        "Click <a href='%s' target='__blank'>here</a>" .
+                        " to show your billet for <strong>%s %s</strong> payment."
+                    ),
+                    $billet['url'],
+                    $this->getCurrentCurrencySymbol(),
+                    $billet['value']
+                );
+            ?>
+          <br />
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+
+<script>
+    <?php
+    /*
+     * @fixme
+     * This is not the best way off appending a information block on checkout success, since this depends on
+     * the existence of a div with the class 'buttons-set'. But, we all knows Magento, and it was done like this
+     * for a good reason: Magento does not includes html of child blocks in block checkout.success when
+     * the user does the checkout as guest. The solution I found was this little workarround there.
+     *
+     * So, I give you, warrior of the future, the duty of doing this in a better way.
+     */
+
+    ?>
+    jQuery(document).ready(function(){
+        var infoBlock = jQuery('#mundipagg-checkout-success-order-info');
+        infoBlock.insertBefore('div.buttons-set');
+        infoBlock.show();
+    });
+</script>

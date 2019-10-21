@@ -1,0 +1,83 @@
+<?php
+
+$_product = Mage::registry('current_product');
+//$_product = $this->getProduct();
+
+$price = $_product->getPrice();
+$webprice = $_product->getwebprice();
+$specialprice = $_product->getFinalPrice();
+
+?>
+
+<div id="quickbuy">
+
+    <div class="quickbuy_close">
+        <div class="icon-cancel-circle"></div>
+    </div>
+
+    <div class="wrapper">
+        <h2><?php echo $_product->getName(); ?></h2>
+        <?php if($specialprice==$price) {?>
+            <div class="price-box">
+                <span class="regular-price"><span class="por">Por</span> <span class="sifrao">R$</span> <?php echo number_format($price,2);?></span>
+            </div>
+        <?php } else { ?>
+            <div class="price-box">
+                <div class="old-price">
+                    <span class="price-label">De:</span>
+                    <span class="price">R$ <?php echo number_format($price,2); ?></span>
+                </div>
+                <div class="special-price">
+                    <span class="price-label">Por:</span>
+                    <span class="price">R$ <?php echo number_format($specialprice,2); ?> </span>
+                </div>
+            </div>
+        <?php } ?>
+        <?php if (!$this->hasOptions()):?>
+            <div class="add-to-box">
+                <?php if($_product->isSaleable()): ?>
+                    <?php echo $this->getChildHtml('addtocart') ?>
+                <?php endif; ?>
+            </div>
+        <?php elseif (!$_product->isSaleable()): ?>
+            <div class="add-to-box">
+                <?php echo $this->getChildHtml('addto') ?>
+            </div>
+        <?php endif; ?>
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    jQuery( function( $ ) {
+        $.fn.centralize = function () {
+            var $element = $(this),
+                $half = $element.height() /2;
+            $element.css('margin-top', - $half);
+        };
+
+        var $quickbuy = $('#quickbuy'),
+            $trigger = $('.quickbuy_close');
+
+        $(document).ready(function(){
+            $quickbuy.centralize();
+            $trigger.click(function(){
+                $quickbuy.toggleClass('closed');
+            });
+        });
+
+        $(window).scroll(function() {
+
+            if ($(this).scrollTop() > 400) {
+                $quickbuy.addClass('visible');
+            }else{
+                $quickbuy.removeClass('visible');
+            }
+        });
+
+    });
+    //]]>
+</script>

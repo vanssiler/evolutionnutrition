@@ -1,0 +1,33 @@
+<?php
+$logo_path = Mage::getStoreConfig('design/header/logo_src');
+$logo_src = $this->getSkinUrl().'/'.$logo_path;
+$logo_alt = Mage::getStoreConfig('design/header/logo_alt');
+?>
+
+<div id="topnav">
+    <div class="container">
+        <div class="row">
+            <div class="quicktop-wrapper">
+                <div class="col-sm-3">
+                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $logo_alt ?>" class="logo"><img src="<?php echo $logo_src; ?>" alt="<?php echo $logo_alt ?>" /></a>
+                </div>
+                <div class="col-sm-6">
+                    <?php echo $this->getChildHtml('quickSearch') ?>
+                </div>
+                <div class="col-sm-2">
+                    <?php echo $this->getChildHtml('cart_sidebar') ?>
+                </div>
+                <div class="col-sm-1 position-static">
+                    <div class="fullmenu pull-right">
+                        <div class="menuicon">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <?php echo $this->getChildHtml('fullMenu') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

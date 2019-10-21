@@ -1,0 +1,318 @@
+<config>
+    <modules>
+        <Mundipagg_Paymentmodule>
+            <version>2.3.1</version>
+        </Mundipagg_Paymentmodule>
+    </modules>
+
+    <global>
+        <models>
+            <paymentmodule>
+                <class>Mundipagg_Paymentmodule_Model</class>
+                <resourceModel>paymentmodule_resource</resourceModel>
+            </paymentmodule>
+
+            <paymentmodule_resource>
+                <class>Mundipagg_Paymentmodule_Model_Resource</class>
+                <entities>
+                    <savedcreditcard>
+                        <table>paymentmodule_savedcreditcard</table>
+                    </savedcreditcard>
+                </entities>
+            </paymentmodule_resource>
+        </models>
+
+        <helpers>
+            <paymentmodule>
+                <class>Mundipagg_Paymentmodule_Helper</class>
+            </paymentmodule>
+        </helpers>
+        
+        <blocks>
+            <paymentmodule>
+                <class>Mundipagg_Paymentmodule_Block</class>
+            </paymentmodule>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_totals>Mundipagg_Paymentmodule_Block_Adminhtml_Sales_Order_Totals</sales_order_totals>
+                </rewrite>
+            </adminhtml>
+            <sales>
+                <rewrite>
+                    <order_totals>Mundipagg_Paymentmodule_Block_Sales_Order_Totals</order_totals>
+                </rewrite>
+            </sales>
+        </blocks>
+
+        <fieldsets>
+            <sales_convert_quote_address>
+                <mundipagg_interest>
+                    <to_order>*</to_order>
+                </mundipagg_interest>
+                <mundipagg_base_interest>
+                    <to_order>*</to_order>
+                </mundipagg_base_interest>
+            </sales_convert_quote_address>
+            <sales_convert_order>
+                <mundipagg_interest>
+                    <to_invoice>*</to_invoice>
+                    <to_shipment>*</to_shipment>
+                    <to_cm>*</to_cm>
+                </mundipagg_interest>
+                <mundipagg_base_interest>
+                    <to_invoice>*</to_invoice>
+                    <to_shipment>*</to_shipment>
+                    <to_cm>*</to_cm>
+                </mundipagg_base_interest>
+            </sales_convert_order>
+        </fieldsets>
+
+        <events>
+            <admin_session_user_login_success>
+                <observers>
+                    <mundipagg_admin_login_checks>
+                        <type>singleton</type>
+                        <class>paymentmodule/observer</class>
+                        <method>adminLoginChecks</method>
+                    </mundipagg_admin_login_checks>
+                </observers>
+            </admin_session_user_login_success>
+
+            <controller_action_layout_load_before>
+                <observers>
+                    <mundipagg_account_creditcard_wallet_menu_item>
+                        <type>singleton</type>
+                        <class>paymentmodule/observer</class>
+                        <method>addAccountCreditcardWalletMenuItem</method>
+                    </mundipagg_account_creditcard_wallet_menu_item>
+                </observers>
+            </controller_action_layout_load_before>
+
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <mundipagg_checkout_success_info>
+                    <type>singleton</type>
+                    <class>paymentmodule/observer</class>
+                    <method>addAdditionalInformationToCheckout</method>
+                </mundipagg_checkout_success_info>
+                </observers>
+            </checkout_onepage_controller_success_action>
+
+           <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <mundipagg_paymentmodule_observer>
+                        <type>singleton</type>
+                        <class>Mundipagg_Paymentmodule_Model_Observer</class>
+                        <method>injectTabs</method>
+                    </mundipagg_paymentmodule_observer>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+
+           <core_block_abstract_to_html_before>
+                <observers>
+                    <mundipagg_paymentmodule_observer>
+                        <type>singleton</type>
+                        <class>Mundipagg_Paymentmodule_Model_Observer</class>
+                        <method>setActiveTab</method>
+                    </mundipagg_paymentmodule_observer>
+                </observers>
+            </core_block_abstract_to_html_before>
+            <admin_system_config_section_save_after>
+                <observers>
+                    <mundipagg_paymentmodule_observer>
+                        <type>singleton</type>
+                        <class>Mundipagg_Paymentmodule_Model_Observer</class>
+                        <method>saveConfigurations</method>
+                    </mundipagg_paymentmodule_observer>
+                </observers>
+            </admin_system_config_section_save_after>
+        </events>
+
+        <sales>
+            <quote>
+                <totals>
+                    <mundipagg_interest>
+                        <class>Mundipagg_Paymentmodule_Model_Sales_Quote_Address_Total_Interest</class>
+                    </mundipagg_interest>
+                </totals>
+            </quote>
+        </sales>
+        <resources>
+            <mundipagg_paymentmodule_setup>
+                <setup>
+                    <module>Mundipagg_Paymentmodule</module>
+                </setup>
+            </mundipagg_paymentmodule_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <paymentmodule>
+                <use>standard</use>
+                <args>
+                    <module>Mundipagg_Paymentmodule</module>
+                    <frontName>mp-paymentmodule</frontName>
+                </args>
+            </paymentmodule>
+        </routers>
+
+        <layout>
+            <updates>
+                <paymentmodule module="Mundipagg_Paymentmodule">
+                    <file>paymentmodule.xml</file>
+                </paymentmodule>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <paymentmodule>
+                    <files>
+                        <default>mundipagg_frontend_locale.csv</default>
+                    </files>
+                </paymentmodule>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <paymentmodules module="Mundipagg_Paymentmodule">
+                    <file>paymentmodule.xml</file>
+                </paymentmodules>
+            </updates>
+        </layout>
+
+        <translate>
+            <modules>
+                <paymentmodule>
+                    <files>
+                        <default>mundipagg_adminhtml_locale.csv</default>
+                    </files>
+                </paymentmodule>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <paymentmodule before="Mage_Adminhtml">Mundipagg_Paymentmodule_Adminhtml</paymentmodule>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <mundipagg_config>
+            <general_group>
+                <module_status>1</module_status>
+                <logs>1</logs>
+                <test_mode>1</test_mode>
+            </general_group>
+            <log_group>
+                <enabled>1</enabled>
+                <log_path>var/log</log_path>
+            </log_group>
+            <address_group>
+                <street>0</street>
+                <number>1</number>
+                <complement>2</complement>
+                <neighborhood>3</neighborhood>
+            </address_group>
+            <boleto_group>
+               <boleto_status>0</boleto_status>
+               <boleto_payment_title>Boleto</boleto_payment_title>
+               <boleto_due_at>3</boleto_due_at>
+                <sort_order>2</sort_order>
+            </boleto_group>
+            <creditcard_group>
+                <cards_config_status>0</cards_config_status>
+                <creditcard_payment_title>Credit card</creditcard_payment_title>
+                <operation_type>AuthAndCapture</operation_type>
+                <sort_order>1</sort_order>
+            </creditcard_group>
+            <twocreditcards_group>
+                <twocreditcards_payment_title>Two Credit Cards</twocreditcards_payment_title>
+                <sort_order>3</sort_order>
+            </twocreditcards_group>
+            <boletocreditcard_group>
+                <boleto_creditcard_payment_title>Boleto + Credit card</boleto_creditcard_payment_title>
+                <sort_order>4</sort_order>
+            </boletocreditcard_group>
+            <voucher_group>
+                <voucher_payment_title>Voucher</voucher_payment_title>
+                <sort_order>5</sort_order>
+            </voucher_group>
+            <installments_group>
+                <default_min_amount>0</default_min_amount>
+                <default_interest>0</default_interest>
+                <default_incremental_interest>0</default_incremental_interest>
+                <visa_min_amount>0</visa_min_amount>
+                <visa_interest>0</visa_interest>
+                <visa_incremental_interest>0</visa_incremental_interest>
+                <mastercard_min_amount>0</mastercard_min_amount>
+                <master_interest>0</master_interest>
+                <mastercard_incremental_interest>0</mastercard_incremental_interest>
+                <hipercard_min_amount>0</hipercard_min_amount>
+                <hipercard_interest>0</hipercard_interest>
+                <hipercard_incremental_interest>0</hipercard_incremental_interest>
+                <diners_min_amount>0</diners_min_amount>
+                <diners_interest>0</diners_interest>
+                <diners_incremental_interest>0</diners_incremental_interest>
+                <amex_min_amount>0</amex_min_amount>
+                <amex_interest>0</amex_interest>
+                <amex_incremental_interest>0</amex_incremental_interest>
+                <elo_min_amount>0</elo_min_amount>
+                <elo_interest>0</elo_interest>
+                <elo_incremental_interest>0</elo_incremental_interest>
+            </installments_group>
+        </mundipagg_config>
+
+        <payment>
+            <paymentmodule_creditcard>
+                <model>paymentmodule/creditcard</model>
+                <title>Mundipagg - credit card</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_creditcard>
+
+            <paymentmodule_boleto>
+                <model>paymentmodule/boleto</model>
+                <title>Mundipagg - boleto</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_boleto>
+
+            <paymentmodule_boletocc>
+                <model>paymentmodule/boletocc</model>
+                <title>Mundipagg - boleto + cc</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_boletocc>
+
+            <paymentmodule_twocreditcards>
+                <model>paymentmodule/twocreditcards</model>
+                <title>Mundipagg - Two credit cards</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_twocreditcards>
+
+            <paymentmodule_voucher>
+                <model>paymentmodule/voucher</model>
+                <title>Mundipagg - Voucher</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_voucher>
+        </payment>
+    </default>
+</config>

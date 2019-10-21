@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Inchoo_PHP7>
+            <version>3.0.0</version>
+        </Inchoo_PHP7>
+    </modules>
+
+    <global>
+        <helpers>
+            <core>
+                <!-- uncomment below line for Magento Enterprise -->
+                <!--<encryption_model>Inchoo_PHP7_Model_EncryptionEE</encryption_model>-->
+                <rewrite>
+                    <data>Inchoo_PHP7_Helper_Data</data>
+                </rewrite>
+            </core>
+        </helpers>
+
+        <!-- Fix for incorrect sorting in the calculation of the discount -->
+        <sales>
+            <quote>
+                <totals>
+                    <msrp>
+                        <before>grand_total</before>
+                    </msrp>
+                    <shipping>
+                        <after>subtotal,freeshipping,tax_subtotal,msrp</after>
+                    </shipping>
+                </totals>
+            </quote>
+        </sales>
+    </global>
+</config>

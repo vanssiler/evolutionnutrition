@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mundipagg_Paymentmodule>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Mundipagg_Paymentmodule>
+    </modules>
+</config>

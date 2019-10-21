@@ -1,0 +1,23 @@
+.mundipaggBrandImage{
+    float: left;
+    min-width: 5px;
+    height: 30px;
+    background-color: #ccc;
+    margin-right: 1px;
+    padding: 2px;
+}
+
+.hidden{
+    display: none;
+}
+
+.mundipagg-brand-image{
+    float: left;
+    width: 50px;
+    margin-right: 5px;
+}
+
+.half-opacity{
+    opacity: 0.15;
+    filter: alpha(opacity=15);/*IE <= 8*/
+}

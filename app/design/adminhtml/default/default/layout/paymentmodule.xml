@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="notifications">
+                <block type="paymentmodule/adminhtml_notification_integrityviolation"></block>
+        </reference>
+    </default>
+
+    <adminhtml_sales_order_view translate="label">
+        <reference name="before_body_end">
+            <block type="page/html_head" name="mp-paymentmodule-charge-controller" as="mp-paymentmodule-charge-controller" after="-" template="paymentmodule/extras.phtml">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/ChargeController.js</name>
+                </action>
+            </block>
+            <block type="paymentmodule/adminhtml_order_charge_popup" name="mp-test" as="mp-test" after="-"></block>
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <adminhtml_system_config_edit translate="label">
+        <reference name="before_body_end">
+            <block type="paymentmodule/adminhtml_extras" name="mp-payment-config"  as="mp-payment-config" after="-">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/hub.min.js</name>
+                </action>
+                <action method="addJs">
+                    <script>lib/jquery/mp-jquery-1.12.0.min.js</script>
+                </action>
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/hubIntegration.js</name>
+                </action>
+            </block>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

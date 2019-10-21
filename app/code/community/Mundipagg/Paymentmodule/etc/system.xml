@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <paymentmoduleconfig translate="label" module="paymentmodule">
+            <label>Mundipagg</label>
+            <sort_order>100</sort_order>
+        </paymentmoduleconfig>
+    </tabs>
+
+    <sections>
+        <payment>
+            <groups>
+                <mundipagg_info type="group" translate="label">
+                    <label>Mundipagg - Payment methods</label>
+                    <sort_order>666</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment>
+                        <![CDATA[
+                            <a href="http://www.mundipagg.com.br" target="_blank">
+                                <img title="MundiPagg" alt="MundiPagg" width="200" src="https://dashboard.mundipagg.com/images/nova-logo-mundipagg.png"/>
+                            </a>
+                            <br>
+                            <br>
+                            <br>
+                            <h3>Allowed payment methods</h3>
+                            <ul>
+                                <li>- Credit card</li>
+                                <li>- Boleto</li>
+                            </ul>
+                            <br>
+                            <br>
+                            <h3><a href="index.php/admin/system_config/edit/section/mundipagg/">Mundipagg module configuration page</a></h3>
+                        ]]>
+                    </comment>
+                </mundipagg_info>
+            </groups>
+        </payment>
+
+        <mundipagg_config translate="label" module="paymentmodule">
+            <label>
+                <![CDATA[<div style="position: absolute;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 30 34" version="1.1">
+                    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+                    <title>logo/icon/default</title>
+                    <desc>Created with Sketch.</desc>
+                    <g id="logo/icon/default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path d="M27.8529439,0.37328215 L13.3363004,14.9691363 C12.2212332,16.0902879 12.2212332,17.9097121 13.3363004,19.0308637 L27.8529439,33.6267179 C28.1086694,33.885144 28.4241076,34 28.7343533,34 C29.3808067,34 30,33.4948944 30,32.7326679 L30,1.26863724 C30,0.505105566 29.3808067,0 28.7343533,0 C28.4241076,0 28.1086694,0.114856046 27.8529439,0.37328215" id="Fill-14" fill="#00B7B4" fill-rule="nonzero"></path>
+                        <path d="M12.7851552,20.7990176 C10.7298947,18.7054959 10.7298947,15.2950396 12.7851552,13.2015179 L13.75,12.2187113 L2.12060852,0.374129786 C1.33771317,-0.424645299 0,0.140501125 0,1.2681836 L0,32.7336571 C0,33.8600344 1.33771317,34.4238756 2.12060852,33.6264057 L13.75,21.7818242 L12.7851552,20.7990176 Z" id="Fill-17" fill="#178176" fill-rule="nonzero"></path>
+                    </g>
+                </svg> &nbsp;Mundipagg</div>&nbsp;]]>
+            </label>
+            <tab>paymentmoduleconfig</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <general_group translate="label" module="paymentmodule">
+                    <label>General configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                        <![CDATA[<br><a href="http://www.mundipagg.com.br" target="_blank"><img title="MundiPagg" alt="MundiPagg" width="200" src="https://dashboard.mundipagg.com/images/nova-logo-mundipagg.png"/></a><br><br><br>]]>
+                    </comment>
+                    <fields>
+                        <hub_integration translate="label">
+                            <label>Hub</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>Mundipagg_Paymentmodule_Block_Adminhtml_HubIntegration</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </hub_integration>
+
+                        <module_version translate="label">
+                            <label>Version</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>Mundipagg_Paymentmodule_Block_Adminhtml_Version</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </module_version>
+
+                        <heading_basic_config translate="label" module="paymentmodule">
+                            <label>Module Basic Configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_basic_config>
+                        <module_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </module_status>
+                    </fields>
+                </general_group>
+
+                <log_group>
+                    <label>Log configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable module logs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>Mundipagg_Paymentmodule_Model_Config_Form_Log_Enabled</backend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable/disable Mundipagg Module log writing. Enabling this option will also enable the Magento default logs, on System -> Configuration -> Advanced -> Developer -> Log Settings. However, disabling it will not disable Magento default logs.
+                            </comment>
+                        </enabled>
+
+                        <host_name>
+                            <label>Add host name to log filename</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <comment>
+                                <model>Mundipagg_Paymentmodule_Model_Config_Form_Log_Hostname</model>
+                            </comment>
+                        </host_name>
+
+                        <non_default_dir translate="label">
+                            <label>Save logs to non-default directory</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <comment>
+                                <![CDATA[
+                                    As default, the log files will be saved to the
+                                    Magento default log directory, <strong>var/log</strong>,
+                                    on Magento install root directory.<br />
+                                    Enable this options to set a non-default
+                                    log saving dir.
+                                ]]>
+                            </comment>
+                        </non_default_dir>
+                        <log_path translate="label">
+                            <label>Logs Directory</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>Mundipagg_Paymentmodule_Model_Config_Form_Log_Path</backend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                                <non_default_dir>1</non_default_dir>
+                            </depends>
+                            <comment>
+                               <model>Mundipagg_Paymentmodule_Model_Config_Form_Log_Path</model>
+                            </comment>
+                        </log_path>
+                    </fields>
+                </log_group>
+
+                <address_group translate="label" module="paymentmodule">
+                    <label>Customer address configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <street translate="label">
+                            <label>Street</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_StreetFields</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </street>
+                        <number translate="label">
+                            <label>Number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_StreetFields</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </number>
+                        <complement translate="label">
+                            <label>Complement</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_StreetFields</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </complement>
+                        <neighborhood translate="label">
+                            <label>Neighborhood</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_StreetFields</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </neighborhood>
+                    </fields>
+                </address_group>
+
+                <antifraud_group translate="label" module="paymentmodule">
+                    <label>Anti-fraud configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <manage_antifraud translate="label">
+                            <label>Anti-fraud configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </manage_antifraud>
+                        <antifraud_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </antifraud_status>
+
+                        <antifraud_minimum translate="label">
+                            <label>Minimum value</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <antifraud_status>1</antifraud_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </antifraud_minimum>
+                    </fields>
+                </antifraud_group>
+
+                <boleto_group translate="label" module="paymentmodule">
+                    <label>Billet configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <manage_cards translate="label">
+                            <label>Billet configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </manage_cards>
+                        <boleto_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_status>
+                        <boleto_payment_title translate="label">
+                            <label>Payment title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_payment_title>
+                        <boleto_name translate="label">
+                            <label>Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_name>
+                        <boleto_bank translate="label">
+                            <label>Select bank</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_BankCodes</source_model>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_bank>
+                        <boleto_due_at translate="label">
+                            <label>Due at</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_due_at>
+                        <boleto_instructions translate="label">
+                            <label>Instructions</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_instructions>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                    </fields>
+                </boleto_group>
+
+                <creditcard_group translate="label" module="paymentmodule">
+                    <label>General credit card configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <cards_config translate="label">
+                            <label>General credit card configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cards_config>
+                        <cards_config_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cards_config_status>
+                        <creditcard_payment_title translate="label">
+                            <label>Payment title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </creditcard_payment_title>
+                        <invoice_name translate="label">
+                            <label>Invoice's name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </invoice_name>
+                        <operation_type translate="label">
+                            <label>Operation type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_CreditCardOperationType</source_model>
+                            <comment>Select operation type</comment>
+                            <sort_order>4</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </operation_type>
+                        <saved_cards_status translate="label">
+                            <label>Enable Saved CreditCards</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </saved_cards_status>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                    </fields>
+                </creditcard_group>
+
+                <twocreditcards_group translate="label" module="paymentmodule">
+                    <label>Two credit cards configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <manage_twocreditcards translate="label">
+                            <label>Two credit cards configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </manage_twocreditcards>
+                        <twocreditcards_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocreditcards_status>
+                        <twocreditcards_payment_title translate="label">
+                            <label>Payment title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <twocreditcards_status>1</twocreditcards_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </twocreditcards_payment_title>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <twocreditcards_status>1</twocreditcards_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                    </fields>
+                </twocreditcards_group>
+
+                <boletocreditcard_group translate="label" module="paymentmodule">
+                    <label>Billet and Credit Card configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <boleto_cards_config translate="label">
+                            <label>General billet and credit card configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </boleto_cards_config>
+                        <boleto_cards_config_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_cards_config_status>
+                        <boleto_creditcard_payment_title translate="label">
+                            <label>Payment title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <boleto_cards_config_status>1</boleto_cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </boleto_creditcard_payment_title>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends>
+                                <boleto_cards_config_status>1</boleto_cards_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                    </fields>
+                </boletocreditcard_group>
+
+                <!-- INSTALLMENTS -->
+                <installments_group translate="label" module="paymentmodule">
+                    <label>Installments configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <!-- DEFAULT -->
+                        <default_brand_header translate="label">
+                            <label><![CDATA[Default configuration - Applicable to all brands]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_brand_header>
+                        <default_status translate="label">
+                            <label>Enabled</label>
+                            <comment><![CDATA[Set it as default for all credit card brands]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_status>
+                        <default_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <default_status>1</default_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_max_installments>
+                        <default_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends>
+                                <default_status>1</default_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_min_amount>
+                        <default_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <depends>
+                                <default_status>1</default_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_interest>
+                        <default_max_without_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>5</sort_order>
+                            <depends>
+                                <default_status>1</default_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_max_without_interest>
+                        <default_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <depends>
+                                <default_status>1</default_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_incremental_interest>
+
+                        <!-- VISA -->
+                        <visa_configuration translate="label">
+                            <label><![CDATA[<img title='Visa' alt='Visa' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/visa.jpg'/> <div style='margin:-23px 0 13px 40px'> Visa configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </visa_configuration>
+                        <visa_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_status>
+                        <visa_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>8</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <visa_status>1</visa_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_max_installments>
+                        <visa_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <visa_status>1</visa_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_min_amount>
+                        <visa_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <visa_status>1</visa_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_interest>
+                        <visa_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>11</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <visa_status>1</visa_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_max_no_interest>
+                        <visa_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <visa_status>1</visa_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </visa_incremental_interest>
+
+                        <!-- MASTERCARD -->
+                        <mastercard_configuration translate="label">
+                            <label><![CDATA[<img title='Mastercard' alt='Mastercard' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/mastercard.jpg'/> <div style='margin:-23px 0 13px 40px'> Mastercard configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </mastercard_configuration>
+                        <mastercard_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mastercard_status>
+                        <mastercard_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>22</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mastercard_max_installments>
+                        <mastercard_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>23</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mastercard_min_amount>
+                        <master_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>24</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </master_interest>
+                        <mastercard_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>25</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mastercard_max_no_interest>
+                        <mastercard_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>26</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mastercard_incremental_interest>
+
+                        <!-- HIPERCARD -->
+                        <hipercard_configuration translate="label">
+                            <label><![CDATA[<img title='Hipercard' alt='Hipercard' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/hipercard.jpg'/> <div style='margin:-23px 0 13px 40px'> Hipercard configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </hipercard_configuration>
+                        <hipercard_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_status>
+                        <hipercard_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>32</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_max_installments>
+                        <hipercard_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>33</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_min_amount>
+                        <hipercard_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>34</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_interest>
+                        <hipercard_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>35</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_max_no_interest>
+                        <hipercard_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>36</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hipercard_incremental_interest>
+
+                        <!-- DINERS-->
+                        <diners_configuration translate="label">
+                            <label><![CDATA[<img title='Diners' alt='Diners' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/diners.jpg'/> <div style='margin:-23px 0 13px 40px'> Diners configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </diners_configuration>
+                        <diners_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_status>
+                        <diners_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>42</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <diners_status>1</diners_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_max_installments>
+                        <diners_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>43</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <diners_status>1</diners_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_min_amount>
+                        <diners_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>44</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <diners_status>1</diners_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_interest>
+                        <diners_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>45</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <diners_status>1</diners_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_max_no_interest>
+                        <diners_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>46</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <diners_status>1</diners_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </diners_incremental_interest>
+
+                        <!-- AMEX -->
+                        <amex_configuration translate="label">
+                            <label><![CDATA[<img title='Amex' alt='Amex' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/amex.jpg'/> <div style='margin:-23px 0 13px 40px'>Amex configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </amex_configuration>
+                        <amex_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_status>
+                        <amex_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>52</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <amex_status>1</amex_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_max_installments>
+                        <amex_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>53</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <amex_status>1</amex_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_min_amount>
+                        <amex_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>54</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <amex_status>1</amex_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_interest>
+                        <amex_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>55</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <amex_status>1</amex_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_max_no_interest>
+                        <amex_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>56</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <amex_status>1</amex_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </amex_incremental_interest>
+
+                        <!-- ELO -->
+                        <elo_configuration translate="label">
+                            <label><![CDATA[<img title='Elo' alt='Elo' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/elo.jpg'/> <div style='margin:-23px 0 13px 40px'>Elo configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </elo_configuration>
+                        <elo_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_status>
+                        <elo_max_installments translate="label">
+                            <label>Max installments number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>62</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <elo_status>1</elo_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_max_installments>
+                        <elo_min_amount translate="label">
+                            <label><![CDATA[Min Amount]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>63</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <elo_status>1</elo_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_min_amount>
+                        <elo_interest translate="label">
+                            <label><![CDATA[Interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>64</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <elo_status>1</elo_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_interest>
+                        <elo_max_no_interest translate="label">
+                            <label>Max installments without interest</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber</source_model>
+                            <sort_order>65</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <elo_status>1</elo_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_max_no_interest>
+                        <elo_incremental_interest translate="label">
+                            <label><![CDATA[Incremental interest(%)]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>66</sort_order>
+                            <depends>
+                                <default_status>0</default_status>
+                                <elo_status>1</elo_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </elo_incremental_interest>
+                    </fields>
+                </installments_group>
+
+                <!-- VOUCHER -->
+                <voucher_group translate="label" module="paymentmodule">
+                    <label>General voucher configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1400</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <voucher_config translate="label">
+                            <label>General voucher configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </voucher_config>
+                        <voucher_config_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </voucher_config_status>
+                        <voucher_payment_title translate="label">
+                            <label>Payment title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <depends>
+                                <voucher_config_status>1</voucher_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </voucher_payment_title>
+                        <invoice_name translate="label">
+                            <label>Invoice's name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends>
+                                <voucher_config_status>1</voucher_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </invoice_name>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <depends>
+                                <voucher_config_status>1</voucher_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                        <!-- Waiting for sdk update
+                        <operation_type translate="label">
+                            <label>Operation type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Paymentmodule_Model_CreditCardOperationType</source_model>
+                            <comment>Select operation type</comment>
+                            <sort_order>4</sort_order>
+                            <depends>
+                                <voucher_config_status>1</voucher_config_status>
+                            </depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </operation_type-->
+                    </fields>
+                </voucher_group>
+
+                <!-- VOUCHER BRANDS -->
+                <voucher_brands_group translate="label" module="paymentmodule">
+                    <label>Voucher brands configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!-- VR -->
+                        <vr_configuration translate="label">
+                            <label><![CDATA[<img title='VR' alt='VR' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/vr.jpg'/> <div style='margin:-23px 0 13px 40px'> VR configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </vr_configuration>
+                        <vr_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </vr_status>
+
+                        <!-- SODEXO -->
+                        <sodexo_configuration translate="label">
+                            <label><![CDATA[<img title='Sodexo' alt='Sodexo' width='35' src='https://dashboard.mundipagg.com/emb/images/brands/sodexo.jpg'/> <div style='margin:-23px 0 13px 40px'> Sodexo configuration</div>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sodexo_configuration>
+                        <sodexo_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sodexo_status>
+                    </fields>
+                </voucher_brands_group>
+
+                <multibuyer_group translate="label" module="paymentmodule">
+                    <label>Multi-Buyer configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1600</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <manage_multibuyer translate="label">
+                            <label>Multi-Buyer configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </manage_multibuyer>
+                        <multibuyer_status translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </multibuyer_status>
+                    </fields>
+                </multibuyer_group>
+            </groups>
+        </mundipagg_config>
+    </sections>
+</config>

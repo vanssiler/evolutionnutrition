@@ -1,0 +1,94 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Shoping cart sidebar
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+$carrinhoVazio = $this->getLayout()->createBlock('cms/block')->setBlockId('carrinho-vazio')->toHtml();
+?>
+<?php if ($this->getIsNeedToDisplaySideBar()):?>
+<div class="topcart-wrapper">
+    <div class="block block-cart">
+        <?php $_cartQty = $this->getSummaryCount() ?>
+        <div class="icons-topcart">
+            <i class="icon-cart2"></i>
+            <div class="items">
+                <strong>Meu carrinho</strong>
+                <?php if ($_cartQty==1): ?>
+                    <span class="amount"><?php echo $this->__('<a href="%s">1 item</a>', $this->getUrl('checkout/cart')) ?></span>
+                <?php else: ?>
+                    <span class="amount"><?php echo $this->__('<a href="%s">%s itens</a>', $this->getUrl('checkout/cart'), $_cartQty) ?></span>
+                <?php endif ?>
+            </div>
+        </div>
+        <div class="topcart">
+            <div class="block-content">
+                <section class="topcart-content">
+                    <h2>Carrinho</h2>
+                    <?php $_items = $this->getRecentItems() ?>
+                    <?php if(count($_items)): ?>
+                        <ul id="cart-sidebar" class="topcart-list">
+                            <?php foreach($_items as $_item): ?>
+                                <?php echo $this->getItemHtml($_item) ?>
+                            <?php endforeach; ?>
+                        </ul>
+                        <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
+                    <?php else: ?>
+                        <div class="empty-msg"><?php echo strip_tags($carrinhoVazio,'<strong><br><a><i><em><b><img><object><embed><iframe>'); ?></div>
+                    <?php endif ?>
+                </section>
+
+
+                <?php if ($_cartQty>0): ?>
+                    <div class="topcart-bottom">
+                        <div class="topcart-subtotal">
+                            <div class="topcart-total-cost">
+                                <span>Subtotal</span>
+                                <?php if ($this->canApplyMsrp()): ?>
+                                    <strong class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></strong>
+                                <?php else: ?>
+                                    <strong><?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?></strong>
+                                    <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+                                        <small>(<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)</small>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="topcart-actions">
+                            <?php echo $this->getChildHtml('extra_actions') ?>
+                            <button type="button" title="<?php echo $this->__('Checkout') ?>" class="button topcart-buttons checkout" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')"><span><span><?php echo $this->__('Checkout') ?></span></span></button>
+                        </div>
+                    </div>
+
+                <?php endif ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;?>

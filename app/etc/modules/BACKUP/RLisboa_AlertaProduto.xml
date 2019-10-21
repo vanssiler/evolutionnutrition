@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <RLisboa_AlertaProduto>
+            <active>true</active>
+            <codePool>local</codePool>
+        </RLisboa_AlertaProduto>
+    </modules>
+</config>

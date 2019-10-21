@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <mundipagg_checkout_handle>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/paymentmodule.css</name>
+            </action>
+            <action method="addJs">
+                <script>lib/jquery/mp-jquery-1.12.0.min.js</script>
+            </action>
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="page/html_head" name="mp-paymentmodule" as="mp-paymentmodule" after="-" template="paymentmodule/extras.phtml">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/paymentmodule.js</name>
+                </action>
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/AbstractCheckoutModuleHandler.js</name>
+                </action>
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/formoperations.js</name>
+                </action>
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/multibuyer.js</name>
+                </action>
+            </block>
+        </reference>
+    </mundipagg_checkout_handle>
+
+    <checkout_onepage_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+        <reference name="before_body_end">
+            <block type="page/html_head" name="mp-paymentmodule-onepage-handler" as="mp-paymentmodule-onepage-handler" after="-" template="paymentmodule/extras.phtml">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/OnepageCheckoutModuleHandler.js</name>
+                </action>
+            </block>
+        </reference>
+    </checkout_onepage_index>
+
+    <onestepcheckout_index_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+        <reference name="before_body_end">
+            <block type="page/html_head" name="mp-paymentmodule-osc-handler" as="mp-paymentmodule-osc-handler" after="-" template="paymentmodule/extras.phtml">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/OSCCheckoutModuleHandler.js</name>
+                </action>
+            </block>
+        </reference>
+    </onestepcheckout_index_index>
+
+    <firecheckout_index_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+        <reference name="before_body_end">
+            <block type="page/html_head" name="mp-paymentmodule-fc-handler" as="mp-paymentmodule-fc-handler" after="-" template="paymentmodule/extras.phtml">
+                <action method="addItem">
+                    <type>js</type>
+                    <name>mundipagg/FireCheckoutModuleHandler.js</name>
+                </action>
+            </block>
+        </reference>
+    </firecheckout_index_index>
+
+    <onepagecheckout_index_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+    </onepagecheckout_index_index>
+
+    <opc_index_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+    </opc_index_index>
+
+    <idecheckoutvm_index_index translate="label">
+        <update handle="mundipagg_checkout_handle"/>
+    </idecheckoutvm_index_index>
+
+    <!-- CreditCard Wallet  ################################################ -->
+    <creditcard_wallet_menu_item_handle translate="label">
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="paymentmodule">
+                <name>paymentmodule</name>
+                <path>mp-paymentmodule/wallet/</path>
+                <label>My cards</label>
+            </action>
+        </reference>
+    </creditcard_wallet_menu_item_handle>
+
+    <paymentmodule_wallet_index translate="label">
+        <label>My Cards</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block
+                    type="paymentmodule/customer_account_wallet"
+                    name="customer_account_wallet"
+            />
+        </reference>
+    </paymentmodule_wallet_index>
+
+    <!-- ################################################################### -->
+
+</layout>

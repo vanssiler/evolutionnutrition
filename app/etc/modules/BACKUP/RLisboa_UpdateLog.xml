@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+<modules>
+<Rlisboa_UpdateLog>
+<active>true</active>
+<codePool>local</codePool>
+</Rlisboa_UpdateLog>
+</modules>
+</config>

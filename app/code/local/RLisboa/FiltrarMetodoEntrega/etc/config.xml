@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The root node for Magento module configuration -->
+<config>
+
+    <!--
+        The module's node contains basic
+        information about each Magento module
+    -->
+    <modules>
+
+        <!--
+            This must exactly match the namespace and module's folder
+            names, with directory separators replaced by underscores
+        -->
+        <RLisboa_FiltrarMetodoEntrega>
+
+            <!-- The version of our module, starting at 0.0.1 -->
+            <version>0.0.1</version>
+
+        </RLisboa_FiltrarMetodoEntrega>
+
+    </modules>
+	
+  <global>
+	<models>
+		<shipping>
+			<rewrite>
+				<shipping>RLisboa_FiltrarMetodoEntrega_Model_Shipping</shipping>
+			</rewrite>
+		</shipping>
+	</models>
+</global>
+
+<default>
+        <filtrarmetodoentrega>
+          <general_filtrarmetodoentrega>
+				  <form_filtrarmetodoentrega>1</form_filtrarmetodoentrega>
+            </general_filtrarmetodoentrega>
+			
+			<creation>
+			
+			</creation>  
+        </filtrarmetodoentrega>
+		
+
+    </default>
+	
+</config>

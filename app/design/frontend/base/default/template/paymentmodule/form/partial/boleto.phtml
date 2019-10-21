@@ -1,0 +1,37 @@
+<?php
+    $_code = $this->getCode();
+    $elementIndex = $this->getElementIndex();
+    $elementId = $_code . "_boleto_". $elementIndex;
+    $elementClass = $_code . "_boleto";
+    $isMultiPayment = $this->getShowValueInput();
+    $grandTotal = $this->getGrandTotal();
+?>
+
+<div class="input-box">
+    <?php if ($isMultiPayment === true) : ?>
+        <h6><?php echo $this->__('Billet') . ' ' . $elementIndex; ?></h6>
+        <div class="input-box">
+            <label><?php echo $this->__('Value'); ?> (Ex: 100.50)<span class="required"></span></label><br/>
+            <input
+                    type="number"
+                    step=".01"
+                    min="0"
+                    id="<?php echo $elementId; ?>_value"
+                    name="payment[<?php echo $elementId; ?>_value]"
+                    title="Value (Ex: 100,50)"
+                    class="required-entry multipayment-value-input"
+                    class="mundipagg-grand-total"
+                    value="">
+        </div>
+    <?php else: ?>
+        <div class="input-box">
+            <input
+                    type="hidden"
+                    id="<?php echo $elementId; ?>_value"
+                    name="payment[<?php echo $elementId; ?>_value]"
+                    value="<?php echo $grandTotal; ?>"
+                    class="mundipagg-grand-total"
+            >
+        </div>
+    <?php endif; ?>
+</div>

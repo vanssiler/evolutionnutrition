@@ -1,0 +1,24 @@
+<div>
+    <p>
+        <?php
+        $info = $this->getInfo();
+        $helper = Mage::helper('paymentmodule');
+
+        $paymentMethod = $this->getPaymentMethod();
+        $methodHandler = $this->methodHandler();
+
+        echo "{$helper->__('Method')}: {$helper->__($paymentMethod)}<br/><br/>";
+
+        foreach ($this->$methodHandler() as $key => $data) {
+            array_walk($data, function ($value, $key) use ($helper) {
+                if (empty($key)) {
+                    echo '<br />';
+                    return;
+                }
+                echo "{$helper->__($key)}: {$value}<br/>";
+            });
+        }
+        ?>
+    </p>
+
+</div>

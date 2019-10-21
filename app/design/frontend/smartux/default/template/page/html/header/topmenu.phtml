@@ -1,0 +1,41 @@
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $_categories = $_helper->getStoreCategories() ?>
+<?php $currentCategory = Mage::registry('current_category') ?>
+<?php if (count($_categories) > 0): ?>
+    <ul id="topmenu">
+        <?php foreach($_categories as $_category): ?>
+            <li class="level0">
+                <a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><?php echo $_category->getName() ?></a>
+                <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+                <?php $_subcategories = $_category->getChildrenCategories() ?>
+                <?php if (count($_subcategories) > 0): ?>
+                    <ul class="submenu">
+                        <?php foreach($_subcategories as $_subcategory): ?>
+                            <li class="level1">
+                                <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>">
+                                    <?php echo $_subcategory->getName() ?>
+                                    <!--sub sub category-->
+                                    <?php $_subcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                                    <?php $_subsubcategories = $_subcategory->getChildrenCategories() ?>
+                                    <?php if (count($_subsubcategories) > 0): ?>
+                                        <ul class="submenu-children">
+                                            <?php foreach($_subsubcategories as $_subsubcategory): ?>
+                                                <li class="level2">
+                                                    <a href="<?php echo $_helper->getCategoryUrl($_subsubcategory) ?>">
+                                                        <?php echo $_subsubcategory->getName() ?>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                    <!--sub sub category-->
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+

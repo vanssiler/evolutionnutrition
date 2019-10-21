@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smartux_Smartuxintegration>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Smartux_Smartuxintegration>
+    </modules>
+</config>

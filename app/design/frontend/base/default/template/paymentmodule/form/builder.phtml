@@ -1,0 +1,43 @@
+<?php
+$_code = $this->getMethodCode();
+$structure = $this->getStructure();
+$orderTotal = $this->getGrandTotal();
+
+$url = explode("?", Mage::getUrl(''));
+$url = $url[0];
+
+?>
+
+<fieldset>
+    <ul id="payment_form_<?php echo $_code; ?>" style="display:none;">
+        <li>
+            <div>
+                <?php if (count($structure) > 1) { ?>
+                    <br>
+                    <h3 class="mundipaggMultiPaymentSubtotal">
+                        <?php echo $this->__('Subtotal'); ?>
+                        <span class="<?php echo $_code; ?>_subtotal paymentmodule_subtotal"
+                            data-value="<?php echo $orderTotal?>">
+                            <?php echo $this->toCurrencyFormat($orderTotal); ?>
+                        </span>
+                    </h3>
+                <?php } ?>
+                <ul >
+                    <?php foreach($structure as $element): ?>
+                    <li style="clear:both">
+                        <?php echo $this->getPartialHtml($element); ?>
+                        <?php echo $this->getMultiBuyerHtml($element); ?>
+
+                    </li>
+                    <?php endforeach; ?>
+                    <input type="hidden" class="baseUrl" value="<?php echo $url;?>"/>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            MundiPagg.initPaymentMethod('<?php echo $_code; ?>','<?php echo $orderTotal; ?>');
+        });
+    </script>
+</fieldset>

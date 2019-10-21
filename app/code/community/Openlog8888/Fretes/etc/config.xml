@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Openlog_Fretes></Openlog_Fretes>
+    </modules>
+    <global>
+        <models>
+            <openlog_fretes>
+                <class>Openlog_Fretes_Model</class>
+            </openlog_fretes>
+        </models>
+    </global>
+    <default>
+        <carriers>
+            <openlog_fretes>
+                <active>1</active>
+                <model>openlog_fretes/carrier</model>
+                <title>Openlog</title>
+            </openlog_fretes>
+        </carriers>
+    </default>
+</config>
+

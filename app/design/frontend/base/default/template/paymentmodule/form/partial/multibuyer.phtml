@@ -1,0 +1,160 @@
+<?php
+    $_code = $this->getCode();
+    $elementIndex = $this->getParentIndex();
+    $elementId = $_code . "_".$this->getParentElement() ."_". $elementIndex;
+    $elementClass = $_code . "_".$this->getParentElement();
+    $countryCollection = $this->getCountryCollection();
+?>
+<div class="input-box">
+
+    <input
+            type="checkbox"
+            id="<?php echo "$elementId"?>_multi_buyer_enabled"
+            name="payment[<?php echo "$elementId"?>_multiBuyerEnabled]"
+            class="multibuyer-toggle-checkbox"
+            onchange="toggleMultiBuyerForm('<?php echo "$elementId"?>')"
+    >
+    <label for="<?php echo "$elementId"?>_multi_buyer_enabled"><?php echo $this->__('Fill other buyer data'); ?></label>
+</div>
+<br>
+<br />
+<div id="<?php echo "$elementId"?>_multi_buyer_form_div" class='multibuyer-form-div' style="display:none">
+    <hr />
+    <br />
+    <h3><?php echo $this->__('Fill other buyer data'); ?></h3>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Full name'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_name"
+                name="payment[<?php echo "$elementId"?>_multiBuyerName]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('E-mail'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_email"
+                name="payment[<?php echo "$elementId"?>_multiBuyerEmail]"
+                class="required-entry validate-email"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Phone'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_phone"
+                name="payment[<?php echo "$elementId"?>_multiBuyerPhone]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Tax/VAT'); ?><span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo $elementId; ?>_multi_buyer_taxvat"
+                name="payment[<?php echo $elementId; ?>_multiBuyerTaxvat]"
+                class="<?php echo $elementClass; ?>_validate-mundipagg-cpf required-entry"
+                onkeyup="validateTaxVat(this)"
+                maxlength="14"
+        />
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Zipcode'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_zip_code"
+                name="payment[<?php echo "$elementId"?>_multiBuyerZipCode]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Street'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_street"
+                name="payment[<?php echo "$elementId"?>_multiBuyerStreet]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Number'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_number"
+                name="payment[<?php echo "$elementId"?>_multiBuyerNumber]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Complement'); ?></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_complement"
+                name="payment[<?php echo "$elementId"?>_multiBuyerComplement]"
+                class=
+                value="">
+    </div>
+
+
+    <div class="input-box">
+        <label><?php echo $this->__('Neighborhood'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_neighborhood"
+                name="payment[<?php echo "$elementId"?>_multiBuyerNeighborhood]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('City'); ?> <span class="required"></span></label><br/>
+        <input
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_city"
+                name="payment[<?php echo "$elementId"?>_multiBuyerCity]"
+                class="required-entry"
+                value="">
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('Country'); ?> <span class="required"></span></label><br/>
+        <select
+                id="<?php echo "$elementId"?>_multi_buyer_country"
+                name="payment[<?php echo "$elementId"?>_multiBuyerCountry]"
+                class="required-entry"
+                onChange="getState(this)"
+                >
+                <option value=""><?php echo $this->__('Select'); ?></option>
+            <?php
+                foreach($countryCollection as $country) :
+            ?>
+                <option value="<?php echo $country['country_id'] ?>" ><?php echo $country['name'] ?></option>
+            <?php
+                endforeach;
+            ?>
+        </select>
+    </div>
+
+    <div class="input-box">
+        <label><?php echo $this->__('State'); ?> <span class="required"></span></label><br/>
+        <select
+                type="text"
+                id="<?php echo "$elementId"?>_multi_buyer_state"
+                name="payment[<?php echo "$elementId"?>_multiBuyerState]"
+                disabled="true"
+                class="required-entry"
+        >
+            <option value=""><?php echo $this->__('Select an Country'); ?></option>
+        </select>
+    </div> 
+</div>

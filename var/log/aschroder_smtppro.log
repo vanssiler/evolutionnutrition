@@ -1,0 +1,298 @@
+2019-10-16T02:24:10+00:00 DEBUG (7): Zend_Mail Object
+(
+    [_charset:protected] => utf-8
+    [_headers:protected] => Array
+        (
+            [To] => Array
+                (
+                    [0] => =\?utf-8\?B\?RXZvbHV0aW9uIE51dHJpdGlvbg==\?= \<contato@evolutionsaude.com.br>
+                    [append] => 1
+                )
+
+            [Subject] => Array
+                (
+                    [0] => =\?utf-8\?B\?UGF5bWVudCBUcmFuc2FjdGlvbiBGYWlsZWQgUmVtaW5kZXI=\?=
+                )
+
+            [From] => Array
+                (
+                    [0] => Evolution Nutrition \<contato@evolutionsaude.com.br>
+                    [append] => 1
+                )
+
+        )
+
+    [_headerEncoding:protected] => quoted-printable
+    [_from:protected] => contato@evolutionsaude.com.br
+    [_to:protected] => Array
+        (
+            [0] => contato@evolutionsaude.com.br
+        )
+
+    [_recipients:protected] => Array
+        (
+            [contato@evolutionsaude.com.br] => 1
+        )
+
+    [_replyTo:protected] => 
+    [_returnPath:protected] => 
+    [_subject:protected] => =\?utf-8\?B\?UGF5bWVudCBUcmFuc2FjdGlvbiBGYWlsZWQgUmVtaW5kZXI=\?=
+    [_date:protected] => 
+    [_messageId:protected] => 
+    [_bodyText:protected] => 
+    [_bodyHtml:protected] => Zend_Mime_Part Object
+        (
+            [type] => text/html
+            [encoding] => quoted-printable
+            [id] => 
+            [disposition] => inline
+            [filename] => 
+            [description] => 
+            [charset] => utf-8
+            [boundary] => 
+            [location] => 
+            [language] => 
+            [_content:protected] => 
+
+
+\<table>
+    \<thead>
+    \<tr>
+        \<th>Opera&ccedil;&atilde;o de Pagamento Falhou.\</th>
+    \</tr>
+    \</thead>
+    \<tbody>
+    \<tr>
+        \<td>
+            \<p>
+                \<b>Raz&atilde;o\</b>\<br />
+                Esse e-mail de cliente já está sendo usado
+            \</p>
+            \<p>
+                \<b>Tipo de Checkout\</b>\<br />
+                onepage
+            \</p>
+            \<p>
+                \<b>Cliente:\</b>\<br />
+                \<a href="mailto:vanssiler.goncalves@gmail.com">Vanssiler Omura\</a> &lt;vanssiler.goncalves@gmail.com&gt;
+            \</p>
+            \<p>
+                \<b>Produtos\</b>\<br />
+                Last Amino 450g EVO-Mix Berry  x 1  BRL 159.9\<br />
+Whey Protein Isolada Hidrolisada 1kg EVO  x 1  BRL 219.9\<br />
+CA Óleo de Cartamo 120 Cap. EVO  x 1  BRL 89.9\<br />
+Whey Protein Concentrada e Isolada 2,4kg EVO-Napolitano  x 2  BRL 289.9\<br />
+
+            \</p>
+            \<p>
+                \<b>Total:\</b>\<br />
+                BRL 1091.9
+            \</p>
+            \<p>
+                \<b>Endere&ccedil;o de Cobran&ccedil;a:\</b>\<br />
+                Vanssiler Omura\<br/>
+
+Rua Santa Cecília\<br />
+611\<br />
+
+Alto Cafezal\<br />
+Marília,  São Paulo, 17504-080\<br/>
+Brasil\<br/>
+T: (14) 99766-9642
+
+
+            \</p>
+            \<p>
+                \<b>Endere&ccedil;o de Entrega:\</b>\<br />
+                Vanssiler Omura\<br/>
+
+Rua Santa Cecília\<br />
+611\<br />
+
+Alto Cafezal\<br />
+Marília,  São Paulo, 17504-080\<br/>
+Brasil\<br/>
+T: (14) 99766-9642
+
+
+            \</p>
+            \<p>
+                \<b>Forma de Entrega:\</b>\<br />
+                
+            \</p>
+            \<p>
+                \<b>Forma de Pagamento:\</b>\<br />
+                Pagar.me Checkout
+            \</p>
+            \<p>
+                \<b>Data e Hora:\</b>\<br />
+                15/10/2019 23:24:09
+            \</p>
+        \</td>
+    \</tr>
+    \</tbody>
+\</table>
+
+            [_isStream:protected] => 
+        )
+
+    [_mimeBoundary:protected] => 
+    [_type:protected] => 
+    [hasAttachments] => 
+    [_parts:protected] => Array
+        (
+        )
+
+    [_mime:protected] => 
+)
+
+2019-10-16T02:24:10+00:00 DEBUG (7): Using Custom SMTP Transport.
+2019-10-16T02:24:58+00:00 DEBUG (7): Zend_Mail Object
+(
+    [_charset:protected] => utf-8
+    [_headers:protected] => Array
+        (
+            [To] => Array
+                (
+                    [0] => =\?utf-8\?B\?RXZvbHV0aW9uIE51dHJpdGlvbg==\?= \<contato@evolutionsaude.com.br>
+                    [append] => 1
+                )
+
+            [Subject] => Array
+                (
+                    [0] => =\?utf-8\?B\?UGF5bWVudCBUcmFuc2FjdGlvbiBGYWlsZWQgUmVtaW5kZXI=\?=
+                )
+
+            [From] => Array
+                (
+                    [0] => Evolution Nutrition \<contato@evolutionsaude.com.br>
+                    [append] => 1
+                )
+
+        )
+
+    [_headerEncoding:protected] => quoted-printable
+    [_from:protected] => contato@evolutionsaude.com.br
+    [_to:protected] => Array
+        (
+            [0] => contato@evolutionsaude.com.br
+        )
+
+    [_recipients:protected] => Array
+        (
+            [contato@evolutionsaude.com.br] => 1
+        )
+
+    [_replyTo:protected] => 
+    [_returnPath:protected] => 
+    [_subject:protected] => =\?utf-8\?B\?UGF5bWVudCBUcmFuc2FjdGlvbiBGYWlsZWQgUmVtaW5kZXI=\?=
+    [_date:protected] => 
+    [_messageId:protected] => 
+    [_bodyText:protected] => 
+    [_bodyHtml:protected] => Zend_Mime_Part Object
+        (
+            [type] => text/html
+            [encoding] => quoted-printable
+            [id] => 
+            [disposition] => inline
+            [filename] => 
+            [description] => 
+            [charset] => utf-8
+            [boundary] => 
+            [location] => 
+            [language] => 
+            [_content:protected] => 
+
+
+\<table>
+    \<thead>
+    \<tr>
+        \<th>Opera&ccedil;&atilde;o de Pagamento Falhou.\</th>
+    \</tr>
+    \</thead>
+    \<tbody>
+    \<tr>
+        \<td>
+            \<p>
+                \<b>Raz&atilde;o\</b>\<br />
+                Falha no pagamento, por favor revise seus dados
+            \</p>
+            \<p>
+                \<b>Tipo de Checkout\</b>\<br />
+                onepage
+            \</p>
+            \<p>
+                \<b>Cliente:\</b>\<br />
+                \<a href="mailto:vanssiler.goncalves@gmail.com">Vanssiler Omura Gonçalves\</a> &lt;vanssiler.goncalves@gmail.com&gt;
+            \</p>
+            \<p>
+                \<b>Produtos\</b>\<br />
+                Last Amino 450g EVO-Mix Berry  x 1  BRL 159.9\<br />
+Whey Protein Isolada Hidrolisada 1kg EVO  x 1  BRL 219.9\<br />
+CA Óleo de Cartamo 120 Cap. EVO  x 1  BRL 89.9\<br />
+Whey Protein Concentrada e Isolada 2,4kg EVO-Napolitano  x 2  BRL 289.9\<br />
+
+            \</p>
+            \<p>
+                \<b>Total:\</b>\<br />
+                BRL 1091.9
+            \</p>
+            \<p>
+                \<b>Endere&ccedil;o de Cobran&ccedil;a:\</b>\<br />
+                Vanssiler Omura Gonçalves\<br/>
+
+Rua Santa Cecília\<br />
+660\<br />
+416\<br />
+Alto Cafezal\<br />
+Marília,  São Paulo, 17504-080\<br/>
+Brasil\<br/>
+T: (14) 99766-9642
+
+
+            \</p>
+            \<p>
+                \<b>Endere&ccedil;o de Entrega:\</b>\<br />
+                Vanssiler Omura Gonçalves\<br/>
+
+Rua Santa Cecília\<br />
+660\<br />
+416\<br />
+Alto Cafezal\<br />
+Marília,  São Paulo, 17504-080\<br/>
+Brasil\<br/>
+T: (14) 99766-9642
+
+
+            \</p>
+            \<p>
+                \<b>Forma de Entrega:\</b>\<br />
+                
+            \</p>
+            \<p>
+                \<b>Forma de Pagamento:\</b>\<br />
+                Pagar.me Checkout
+            \</p>
+            \<p>
+                \<b>Data e Hora:\</b>\<br />
+                15/10/2019 23:24:58
+            \</p>
+        \</td>
+    \</tr>
+    \</tbody>
+\</table>
+
+            [_isStream:protected] => 
+        )
+
+    [_mimeBoundary:protected] => 
+    [_type:protected] => 
+    [hasAttachments] => 
+    [_parts:protected] => Array
+        (
+        )
+
+    [_mime:protected] => 
+)
+
+2019-10-16T02:24:58+00:00 DEBUG (7): Using Custom SMTP Transport.
