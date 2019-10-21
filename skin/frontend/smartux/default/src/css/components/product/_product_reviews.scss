@@ -1,0 +1,33 @@
+/*AVALIAÇÕES*/
+
+.box-reviews .form-add{padding: 10px; background: #f1f1f1}
+.box-reviews .form-add h4{font-size: 14px; text-transform: uppercase; font-weight: 600}
+
+#product-review-table li{margin-bottom: 10px;}
+#product-review-table li > div{display: inline-block; vertical-align: middle}
+#product-review-table li > div:after{content: ''; display: block; clear: both}
+#product-review-table .review-name{width: 120px; font-size: 13px; font-weight:600;}
+
+.rating-input {display: none;}
+.rating-star{margin: 0; font-size: 18px; line-height: 15px; padding: 0 5px 0 0}
+.rating-star:before{font-family: 'icomoon'; content: '\ea01';}
+.rating-star:hover:before,
+.rating-star:hover ~ .rating-star:before {content: '\ea03';}
+.rating-wrapper:hover .rating-star:hover,
+.rating-wrapper:hover .rating-star:hover ~ .rating-star:before,
+.rating-input:checked ~ .rating-star:before {content: '\ea03';}
+.rating-star,
+.rating-wrapper:hover .rating-star {float: right; display: block;}
+
+.box-reviews textarea{margin-bottom: 10px;}
+.box-reviews .btn{width: 100%}
+
+.reviews-main-wrapper{padding: 10px; background: #f1f1f1}
+.reviews-main-title{text-transform: uppercase; font-size: 18px;}
+.review-wrapper{margin-bottom: 20px;}
+.review-by{margin-bottom: 15px;}
+.user-review{padding: 10px; background: #fff; position: relative}
+.user-review:before{content: ''; display: block; position: absolute; border: solid transparent; border-width: 0 10px 10px 0; border-bottom-color: #fff; top: -10px; left: 30px;}
+
+.review-stars li{display: inline-block; vertical-align: middle}
+.review-stars li:first-child{min-width: 140px;}

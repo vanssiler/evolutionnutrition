@@ -1,0 +1,75 @@
+/*PRODUTO*/
+
+.main-image-wrapper{position: relative; overflow: hidden; margin-bottom: 10px;}
+/*.zoomWrapper{height: auto!important; width: auto!important;}*/
+/*.zoomWrapper img{position: static!important;height: auto!important; width: auto!important;}*/
+
+
+.more-views .extra-images{position: relative}
+.more-views .extra-images .gallery-container{overflow: hidden}
+.more-views h2{font-size: 13px; text-transform: uppercase}
+.more-views ul{font-size: 0;}
+.more-views ul li{padding: 5px;}
+.more-views ul li a{display: block}
+.more-views ul li a:hover{box-shadow: 0 0 1px 0 rgba(0,0,0,.3)}
+.more-views .extra-images-next,
+.more-views .extra-images-prev{position: absolute; z-index: 10; cursor: pointer; top: 50%; margin-top: -10px; font-size: 20px; line-height: 20px; left: -15px}
+.more-views .extra-images-next{left: auto; right: -15px;}
+
+.product-essential{margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #f1f1f1}
+
+#quickbuy{position: fixed; visibility: hidden; opacity: 0; z-index: -1000; right: 0; top: 50%; background: #fff; box-shadow: 0 0 3px 0 rgba(0,0,0,.3); width: 260px; padding: 20px; border-radius: 4px 0 0 4px;}
+#quickbuy.visible{visibility: visible; z-index: 9999; opacity: 1}
+#quickbuy.closed{right: -240px;}
+#quickbuy .quickbuy_close{position: absolute; left: -10px; top: -10px; height: 20px; width: 20px; line-height: 20px; font-size: 20px; background: #fff; border-radius: 100%;}
+#quickbuy.closed .quickbuy_close{-ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+#quickbuy h2{font-size: 18px; text-transform: uppercase}
+
+/*.product-shop{position: relative;z-index: 1}*/
+
+.product-name{margin-bottom: 10px;}
+.product-name h1{font-size: 24px; line-height: 25px; margin-bottom: 5px;}
+.short-description{margin-bottom: 10px;}
+.short-description > h2{font-size: 14px; margin-bottom: 5px; text-transform: uppercase; font-weight: 600}
+
+.email-friend i{margin: 0 5px 0 0;}
+
+.ratings{margin-bottom: 10px;}
+.ratings .rating-box{display: inline-block; vertical-align: middle; margin: 0 10px 0 0; font-size: 18px;}
+.ratings .rating-links{display: inline-block; vertical-align: middle}
+
+.product-shop .price-box{margin-bottom: 20px}
+.product-shop .old-price{font-size: 13px; line-height: 13px;}
+.product-shop .regular-price,
+.product-shop .special-price{font-size: 24px; line-height: 24px;}
+
+.add-to-box{margin-bottom: 20px;}
+.add-to-box .add-to-cart{}
+.add-to-box .qty-box{float: left; position: relative; padding-right: 20px;}
+.add-to-box .qty-box label{display: none}
+.add-to-box .qty-box .input-text{height: 45px;}
+.add-to-box .qty-box .qty{display: inline-block; vertical-align: middle; width: 50px; text-align: center}
+.add-to-box .qty-box button{width: 15px; right:0; position: absolute; border: none; background: none}
+.add-to-box .qty-box .plus{top: 0px;}
+.add-to-box .qty-box .minus{bottom: 0px;}
+
+.add-to-cart{margin-bottom: 20px}
+.add-to-cart.has-qty:after{content: ''; display: block; clear: both}
+.add-to-cart.has-qty .btn-wrapper{margin: 0 0 0 90px;}
+.add-to-cart .btn-cart{height: 45px;}
+
+.block-shipping-estimate{margin-bottom: 20px;}
+.block-shipping-title{text-transform: uppercase}
+.shipping-estimation-form .form-cep{position: relative}
+.shipping-estimation-form .form-cep label{margin: 8px 0 0; float: left;}
+.shipping-estimation-form .form-cep .input-box{margin: 0 0 0 40px;}
+.shipping-estimation-form .form-cep input[type=text]{padding: 0 60px 0 10px;}
+.shipping-estimation-form .form-cep .button{position: absolute; right: 2px; top: 2px; bottom: 2px; padding: 0 10px; background: #333; color: #fff; border: none; border-radius: 2px;}
+.shipping-subtitle{font-size: 12px; margin-bottom: 5px; display: block}
+.block-shipping-results{padding: 10px; background: #f1f1f1}
+.block-shipping-results .block-content{padding: 0;}
+.block-shipping-results .block-content dl{margin-bottom: 0;}
+.block-result-title{text-transform: uppercase; margin-bottom: 5px;}
+
+.box-collateral{margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #f1f1f1}
+.box-collateral > h2{text-transform: uppercase; font-size: 22px; font-weight: 600; margin-bottom: 20px;}

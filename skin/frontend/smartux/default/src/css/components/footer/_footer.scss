@@ -1,0 +1,33 @@
+/*RODAPÉ*/
+
+.footer{border-top: 4px solid #333; padding: 20px 0 0;}
+.footer h3{margin: 0 0 15px; text-transform: uppercase; font-size: 18px; font-weight: 600;}
+
+.footer-top{margin-bottom: 20px;}
+.footer .logo{margin-bottom: 10px; display: block}
+
+.footer .contacts li{margin-bottom: 5px;}
+.footer .contacts .telefone{font-size: 18px}
+.footer .contacts .telefone i{font-size: 14px}
+.footer .contacts .horario i{float: left; margin: 2px 5px 0 0;}
+
+.footer .social{font-size: 0;}
+.footer .social li{display: inline-block; vertical-align: middle; margin: 0 10px 10px}
+.footer .social a:hover{text-decoration: none}
+.footer .social a i{font-size: 30px;}
+.footer .social .ico-fb i{color: #3b5998}
+.footer .social .ico-tt i{color: #00aced}
+.footer .social .ico-it i{color: #125688}
+.footer .social .ico-gp i{color: #dd4b39}
+.footer .social .ico-yt i{color: #bb0000}
+.footer .social .ico-pt i{color: #cb2027}
+.footer .social .ico-li i{color: #007bb5}
+.footer .social .ico-bl i{color: #f57d00}
+
+.footer-bottom{margin-bottom: 20px;}
+
+.ressalva{background: #f1f1f1; border-top: 1px solid #999; padding: 20px 0; color: #666; font-size: 12px; text-align: center}
+.ressalva p{margin-bottom: 0;}
+
+.smartux{padding: 5px 0; text-align: center; background: #333;}
+.smartux img{max-width: 110px; height: auto;}

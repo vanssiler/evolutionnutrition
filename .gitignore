@@ -1,5 +1,5 @@
 gulpfile.js
 node_modules
-var/cache/
-var/log/
-var/session/
+var/cache/ 
+var/log/ 
+var/session/ 

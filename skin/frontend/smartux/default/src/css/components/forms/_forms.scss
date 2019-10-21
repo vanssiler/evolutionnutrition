@@ -1,0 +1,5 @@
+/* Form Validation */
+
+.input-box {position: relative !important;}
+.validation-advice {background: #DB6D00;  bottom: -7px; color: #fff; font-size: 11px; font-weight: bold; line-height: 13px; min-height: 13px; padding: 10px; position: absolute; left: -150px; width: 120px; border-radius: 5px; box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);}
+.validation-advice:after {position: absolute; right: -8px; bottom: 8px; content: " "; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 8px solid #DB6D00;}

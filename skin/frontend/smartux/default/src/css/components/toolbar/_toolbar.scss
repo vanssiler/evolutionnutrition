@@ -1,0 +1,19 @@
+/*TOOLBAR*/
+
+.toolbar{display: block; clear: both; border:solid #ccc; border-width: 1px 0; padding: 10px 0; margin: 0 0 20px 0;}
+.toolbar p{margin-bottom: 0;}
+.toolbar .pager{text-align: left; margin: 0;}
+.toolbar .pager > *{display: inline-block; vertical-align: baseline}
+.toolbar .pager .limiter{margin-left: 10px;}
+.toolbar .pager .limiter *{display: inline-block; vertical-align: baseline}
+.toolbar .pager .limiter .form-control{width: 50px;}
+
+.toolbar .sorter{text-align: right}
+.toolbar .sorter *{display: inline-block; vertical-align: middle}
+.toolbar .view-mode{font-size: 30px; height: 30px;}
+.toolbar .view-mode *{vertical-align: top}
+.toolbar .view-mode label{display: none}
+.toolbar .view-mode a{opacity: .7;}
+.toolbar .view-mode a:hover{opacity: 1; text-decoration: none}
+.toolbar .form-control{width: 110px;}
+.toolbar .sort{font-size: 25px; margin: 0 0 0 10px}

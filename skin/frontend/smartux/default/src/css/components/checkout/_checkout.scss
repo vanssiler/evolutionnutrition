@@ -1,0 +1,58 @@
+/* CHECKOUT */
+
+.checkout-onepage-index .main.container{
+    display: flex;
+    align-items: flex-start;
+}
+.checkout-onepage-index .main.container .col-main{
+    flex: 0 0 70%;
+}
+.checkout-onepage-index .main.container .col-right.sidebar{
+    flex: 0 0 30%;
+    padding: 15px;
+    border: 1px solid #333;
+}
+
+.checkout-onepage-index .section .step-title{
+    display: none;
+}
+.checkout-onepage-index .section.active .step-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.checkout-onepage-index .step-title a{display: none}
+.checkout-onepage-index .step-title .number{
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 100%;
+    margin: 0 15px 0 0;
+    border: 2px solid #333;
+}
+.checkout-onepage-index .step-title h2{
+    margin: 0;
+}
+#checkout-review-table{
+    width: 100%;
+    margin-bottom: 40px;
+}
+#checkout-review-table thead{background: #ececec}
+#checkout-review-table th,
+#checkout-review-table td{padding: 5px}
+#checkout-review-table tbody{box-shadow: inset 0 0 0 1px #ececec}
+
+#checkout-review-submit{margin-bottom: 40px}
+#checkout-review-submit .buttons-set{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.checkout-onepage-success .col-right.sidebar{
+    display: none;
+}
