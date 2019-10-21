@@ -34,6 +34,24 @@ ChangeQty = function () {
 jQuery(function ($) {
     $(document).ready(function () {
         // alert('MOBILE!');
+
+        var $fullMenu = $('.menu__wrapper');
+        var $menuTrigger = $('.menuicon');
+        var $menuClose = $('.menu__close');
+
+        $menuTrigger.click(function () {
+            $fullMenu.addClass('active');
+        })
+        $menuClose.click(function () {
+            $fullMenu.removeClass('active');
+        })
+
+        $('.menu_title').click(function () {
+            $(this).toggleClass('active');
+            $(this).next('ul').slideToggle();
+            // $('#menu').toggleClass('active');
+        })
+
     });
 
     $(window).scroll(function () {
