@@ -2242,3 +2242,15 @@ error:14077410:SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure
   ),
   '_code' => 'recurring_initial_fee',
 )
+2019-10-21T03:38:15+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
