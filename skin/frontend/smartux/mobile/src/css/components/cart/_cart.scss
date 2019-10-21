@@ -1,0 +1,97 @@
+/*CARRINHO*/
+
+#loader{position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.6); z-index: 999999; display: none}
+#loader img{position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -25px;}
+
+.cart .page-title{display: table; width: 100%; max-width: 100%; padding: 10px; background: #f1f1f1; margin-bottom: 20px;}
+.cart .page-title h1{float: left; font-size: 22px; line-height: 40px; text-transform: uppercase; margin: 0}
+.cart .page-title ul{float: right}
+
+.cart-col-wrapper{font-size: 0}
+.cart-col-wrapper li{font-size: 13px; display: inline-block; vertical-align: middle; padding: 5px 10px;}
+
+.cart .col-1{width: 50%}
+.cart .col-2{width: 20%;}
+.cart .col-3{width: 15%;}
+.cart .col-4{width: 15%; text-align: right}
+
+.cart-thead{background: #333}
+.cart-thead li{color: #fff; text-transform: uppercase} 
+
+.cart-body{margin-bottom: 50px; padding-bottom: 50px; border-bottom: 1px solid #ccc}
+
+.cart-content{border: solid #f1f1f1; border-width: 0 1px; margin-bottom: 30px}
+.cart-item{border-bottom: 1px solid #f1f1f1; padding: 5px 0}
+.cart-item:hover{background: #f7f7f7}
+.cart-item .prd-img,
+.cart-item .product-image{display: inline-block; vertical-align: middle; max-width: 100px} 
+.cart-item .prd-description{display: inline-block; vertical-align: middle; width: calc(100% - 120px); margin-left: 15px}
+.cart-item .product-name{font-size: 18px; text-transform: uppercase}
+
+.cart-item .qty-wrap{display: inline-block; vertical-align: middle}
+.cart-item .input-wrap{display: inline-block; vertical-align: middle; padding: 0 20px 0 0; position: relative;}
+.cart-item .input-wrap .qty{width: 40px; text-align: center} 
+.cart-item .input-wrap .plus,
+.cart-item .input-wrap .minus{position: absolute; right: 0; border: none; background: none; line-height: 12px; font-size: 12px; height: 12px;}
+.cart-item .input-wrap .plus{top: 0}
+.cart-item .input-wrap .minus{bottom: 0}
+
+.cart-item .qty-actions{display: inline-block; vertical-align: middle}
+.cart-item .btn-qty-update{border: none; background: #333; display: none; margin: 0 0 0 15px; color: #fff; border-radius: 3px;}
+.cart-item .btn-qty-update i{width: 30px; height: 30px; display: block; line-height: 30px; font-size: 20px;}
+
+.cart-item .remove{display: inline-block; vertical-align: middle; margin-left: 10px; font-size: 16px;}
+
+.cart-item .cart-price{font-weight: 600; font-size: 16px;}
+
+.cart-footer{margin-bottom: 30px;}
+
+@-webkit-keyframes rotation1{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes rotation1{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-o-keyframes rotation1{
+    from{-o-transform:rotate(0deg);}
+    to{-o-transform:rotate(360deg);}
+}
+@keyframes rotation1{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.processing{position: relative}
+.processing:before{content:'Processando...'; position: absolute; left: 40px; padding: 5px; background: rgba(0,0,0,.6); color: #fff}
+.processing:after{content:'';display: block; position: absolute; left: 35px; top: 50%; margin-top: -5px; border-right: 5px solid rgba(0,0,0,.6); border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: none}
+.spin{-moz-animation: rotation1 1s linear infinite; -o-animation: rotation1 1s linear infinite; -webkit-animation: rotation1 1s linear infinite; animation: rotation1 1s linear infinite;}
+
+.shipping{padding: 10px; border: 1px solid #f1f1f1;}
+.shipping h2{font-size: 18px; text-transform: uppercase; font-weight: 600}
+.shipping .input-box{position: relative}
+.shipping .input-box label{display: none}
+.shipping .input-box #postcode{height: 40px}
+.shipping .input-box button{position: absolute; right: 5px; top: 5px; padding: 8px 10px; font-size: 14px; line-height: 14px; border-radius: 3px;}
+
+.sp-methods{margin-top: 10px; padding-top: 10px; border-top: 1px dashed #f1f1f1;}
+.sp-methods h3{font-size: 14px; text-transform: uppercase; font-weight: 600}
+.sp-methods .method{padding: 10px; background: #f8f8f8; margin-bottom: 10px;}
+.sp-methods .method:last-child{margin-bottom: 0}
+.sp-methods .method_title{font-weight: 700; font-size: 13px; text-transform: uppercase}
+.sp-methods li > *{display: inline-block; vertical-align: middle; margin: 0}
+.method-select{display: none}
+
+.discount-box{padding: 10px; border: 1px solid #f1f1f1;}
+#discount-coupon-form{}
+.discount-box h2{font-size: 18px; text-transform: uppercase; font-weight: 600}
+.discount-box #coupon_code{height: 40px;}
+.coupon-btn{position: absolute; right: 5px; top: 5px; padding: 8px 10px; font-size: 14px; line-height: 14px; border-radius: 3px;}
+
+.cart .totals{padding: 10px; background: #F8f8f8}
+
+.crosssell{margin-bottom: 50px;}
+
+.cart-continue{padding: 10px; background: #f1f1f1;}
+.checkout-types .btn-proceed-checkout{float: right}

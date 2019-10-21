@@ -1,0 +1,23 @@
+/*LISTAGEM*/
+
+.products-grid .item{margin-bottom: 20px;}
+.products-grid .item.first{clear: left}
+.product-wrapper{box-shadow: 0 0 1px 0 rgba(0,0,0,.2); padding: 10px;}
+.item:hover .product-wrapper{box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3)}
+.products-grid .product-image{display: block; margin-bottom: 10px;}
+.products-grid .product-name{margin: 0 0 10px; font-size: 18px; text-transform: uppercase}
+
+.price-box{margin-bottom: 10px;}
+.old-price{color: #999; text-decoration: line-through; margin-bottom: 5px;}
+.special-price{font-size: 16px; font-weight: 600; margin-bottom: 0;}
+.regular-price{font-size: 16px; font-weight: 600; margin-bottom: 0;}
+
+.products-grid .add-to-links{padding: 5px 0; border: dashed #ccc; border-width: 1px 0; margin-bottom: 10px; font-size: 12px;}
+.products-grid .add-to-links li{margin-bottom: 5px;}
+.products-grid .add-to-links li:last-child{margin-bottom: 0;}
+.products-grid .add-to-links i{font-size: 14px; margin: 0 5px 0 0}
+
+.btn-cart{background: #333; color: #fff; text-transform: uppercase; text-align: center; width: 100%; border: none; display: block; padding: 10px 5px; font-size: 16px;}
+.btn-cart i{font-size: 20px; margin: 0 5px 0 0;}
+
+.products-list > li{margin-bottom: 20px;}

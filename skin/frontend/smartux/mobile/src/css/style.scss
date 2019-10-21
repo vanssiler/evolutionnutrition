@@ -1,0 +1,26 @@
+  @import "defaults/variables";
+  @import "defaults/defaults";
+
+  @import "components/header/header";
+
+  @import "components/home/home";
+
+  @import "components/showcase/showcase";
+
+  @import "components/sidebar/sidebar";
+
+  @import "components/breadcrumb/breadcrumb";
+
+  @import "components/toolbar/toolbar";
+
+  @import "components/product/product_main";
+  @import "components/product/product_tabs";
+  @import "components/product/product_reviews";
+  
+  @import "components/footer/footer";
+  
+  @import "components/forms/forms";
+  
+  @import "components/cart/cart";
+  
+  @import "components/checkout/checkout"; 

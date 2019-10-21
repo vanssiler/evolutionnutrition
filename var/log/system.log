@@ -2207,3 +2207,38 @@ error:14077410:SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure
   ),
   '_code' => 'nominal',
 )
+2019-10-21T03:01:38+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T03:02:44+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T03:26:27+00:00 DEBUG (7): array (
+  'class' => 'sales/quote_address_total_nominal_recurring_initial',
+  'sort_order' => '10',
+  'before' => 
+  array (
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'recurring_initial_fee',
+)

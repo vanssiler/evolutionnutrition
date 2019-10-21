@@ -70,7 +70,7 @@
          <stylesheet>css/icomoon.css</stylesheet>
       </action>
       <action method="addCss">
-         <stylesheet>css/styles.css</stylesheet>
+         <stylesheet>css/style.css</stylesheet>
       </action>
       <action method="addCss">
          <stylesheet>css/widgets.css</stylesheet>

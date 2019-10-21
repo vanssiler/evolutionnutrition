@@ -64,7 +64,7 @@ Default layout, loads most of the pages
 
                 <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/icomoon.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/style.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
 

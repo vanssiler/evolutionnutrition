@@ -33,7 +33,7 @@ ChangeQty = function () {
 
 jQuery(function ($) {
     $(document).ready(function () {
-        alert('MOBILE!');
+        // alert('MOBILE!');
     });
 
     $(window).scroll(function () {
