@@ -2266,3 +2266,293 @@ error:14077410:SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure
   ),
   '_code' => 'nominal',
 )
+2019-10-21T03:57:25+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T04:24:32+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T04:46:01+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T04:53:03+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T04:54:39+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T04:58:41+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:03:46+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:14:41+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:21:27+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:23:39+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:40:17+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T05:55:59+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T06:04:19+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T06:19:01+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T06:21:38+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T06:32:47+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T06:50:00+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:00:19+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:00:43+00:00 ERR (3): Warning: include(Mage/Mpanel/Helper/Data.php): failed to open stream: No such file or directory  in /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/lib/Varien/Autoload.php on line 94
+2019-10-21T07:00:43+00:00 ERR (3): Warning: include(): Failed opening 'Mage/Mpanel/Helper/Data.php' for inclusion (include_path='/Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/local:/Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/community:/Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/app/code/core:/Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/lib:.:/Applications/MAMP/bin/php/php7.0.8/lib/php')  in /Users/Vanssiler/Desktop/TRABALHOS/SMARTUX/CLIENTES/EVOLUTION NUTRITION/evolution/lib/Varien/Autoload.php on line 94
+2019-10-21T07:01:17+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:02:24+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:03:07+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:06:25+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:21:01+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)
+2019-10-21T07:23:12+00:00 DEBUG (7): array (
+  'renderer' => 'checkout/total_nominal',
+  'class' => 'sales/quote_address_total_nominal',
+  'before' => 
+  array (
+    0 => 'subtotal',
+  ),
+  'after' => 
+  array (
+  ),
+  '_code' => 'nominal',
+)

@@ -5,39 +5,58 @@ $categories = $category->getCollection()
     ->addAttributeToFilter('is_active', 1)
     ->addAttributeToFilter('level',2)
 ?>
-<div class="fullmenu_wrapper">
-    <ul id="fullmenu">
-        <?php foreach ($categories as $category): ?>
-            <li class="level0">
-                <a href="<?php echo $category->getUrl() ?>"><?php echo $category->getName() ?></a>
-                <?php $_subcategories = $category->getChildrenCategories() ?>
-                <?php if (count($_subcategories) > 0): ?>
-                    <ul class="submenu">
-                        <?php foreach($_subcategories as $_subcategory): ?>
-                            <li class="level1">
-                                <a href="<?php echo $category->getCategoryUrl($_subcategory) ?>">
-                                    <?php echo $_subcategory->getName() ?>
-                                    <!--sub sub category-->
-                                    <?php $_subcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
-                                    <?php $_subsubcategories = $_subcategory->getChildrenCategories() ?>
-                                    <?php if (count($_subsubcategories) > 0): ?>
-                                        <ul class="submenu-children">
-                                            <?php foreach($_subsubcategories as $_subsubcategory): ?>
-                                                <li class="level2">
-                                                    <a href="<?php echo $category->getCategoryUrl($_subsubcategory) ?>">
-                                                        <?php echo $_subsubcategory->getName() ?>
-                                                    </a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
-                                    <!--sub sub category-->
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+<div class="menu__wrapper">
+    <div class="menu__header">
+        <?php if (Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
+            <div class="customer-links"><i class="icon-user"></i>Olá <?php echo $customer->getFirstname(); ?> <span class="icon icon-down"></span></div>
+            <?php echo $this->getChildHtml('topLinks') ?>
+        <?php else :?>
+            <div class="customer-links"><a href="<?php echo Mage::getUrl('customer/account/login'); ?>"><i class="icon-user"></i> Minha conta</a></div>
+        <?php endif; ?>
+
+        <div class="menu__close">
+            <i></i>
+            <i></i>
+        </div>
+    </div>
+    <div class="menu__body">
+        <h3 class="menu_title">Produtos</h3>
+        <ul id="menu">
+            <?php foreach ($categories as $category): ?>
+                <li class="level0">
+                    <a href="<?php echo $category->getUrl() ?>"><?php echo $category->getName() ?></a>
+                    <?php $_subcategories = $category->getChildrenCategories() ?>
+                    <?php if (count($_subcategories) > 0): ?>
+                        <ul class="submenu">
+                            <?php foreach($_subcategories as $_subcategory): ?>
+                                <li class="level1">
+                                    <a href="<?php echo $category->getCategoryUrl($_subcategory) ?>">
+                                        <?php echo $_subcategory->getName() ?>
+                                        <!--sub sub category-->
+                                        <?php $_subcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+                                        <?php $_subsubcategories = $_subcategory->getChildrenCategories() ?>
+                                        <?php if (count($_subsubcategories) > 0): ?>
+                                            <ul class="submenu-children">
+                                                <?php foreach($_subsubcategories as $_subsubcategory): ?>
+                                                    <li class="level2">
+                                                        <a href="<?php echo $category->getCategoryUrl($_subsubcategory) ?>">
+                                                            <?php echo $_subsubcategory->getName() ?>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                        <!--sub sub category-->
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php 
+            echo $this->getLayout()->createBlock('cms/block')->setBlockId('mobile_header_institucional')->toHtml();
+        ;?>
+    </div>
 </div>

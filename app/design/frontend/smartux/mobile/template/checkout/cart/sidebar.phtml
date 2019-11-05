@@ -36,9 +36,9 @@ $carrinhoVazio = $this->getLayout()->createBlock('cms/block')->setBlockId('carri
     <div class="block block-cart">
         <?php $_cartQty = $this->getSummaryCount() ?>
         <div class="icons-topcart">
-            <i class="icon-cart2"></i>
+            <i class="icon-bag4"></i>
             <div class="items">
-                <strong>Meu carrinho</strong>
+                <strong>Minha Sacola</strong>
                 <?php if ($_cartQty==1): ?>
                     <span class="amount"><?php echo $this->__('<a href="%s">1 item</a>', $this->getUrl('checkout/cart')) ?></span>
                 <?php else: ?>

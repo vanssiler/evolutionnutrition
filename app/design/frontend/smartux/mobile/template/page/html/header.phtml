@@ -29,62 +29,30 @@
 $customer = Mage::getSingleton('customer/session')->getCustomer();
 $storePhone = Mage::getStoreConfig('general/store_information/phone');
 ?>
+
+
+
+<?php echo $this->getChildHtml('fullMenu') ?>
+
+
+
 <header class="header-container">
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4 class="televendas"><i class="icon-phone"></i>Atendimento <strong><?php echo $storePhone; ?></strong></h4>
-                </div>
-                <div class="col-sm-6 pull-right text-right">
-                    <div class="customer-menu">
-                        <?php if (Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
-                            <div class="customer-links"><i class="icon-user"></i>Olá <?php echo $customer->getFirstname(); ?> <span class="icon icon-down"></span></div>
-                        <?php echo $this->getChildHtml('topLinks') ?>
-                        <?php else :?>
-                            <div class="customer-links"><i class="icon-user"></i>Olá! Faça <a href="<?php echo Mage::getUrl('customer/account/login'); ?>">login</a> ou <a href="<?php echo Mage::getUrl('customer/account/create'); ?>">cadastre-se</a>.</div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="header-middle">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+            <div class="header__wrapper">
+                <div class="menuicon">
+                    <i></i>
+                    <i></i>
+                    <i></i>
                 </div>
-                <div class="col-sm-7">
-                    <?php echo $this->getChildHtml('topSearch') ?>
-                </div>
-                <div class="col-sm-2">
-                    <div class="header-cart">
-                        <?php echo $this->getChildHtml('cart_sidebar'); ?>
-                    </div>
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <div class="header-cart">
+                    <?php echo $this->getChildHtml('cart_sidebar'); ?>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="header-bottom">
-        <div class="container">
-            <nav class="headermenu">
-                <div class="fullmenu">
-                    <div class="menuicon">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </div>
-                    <?php echo $this->getChildHtml('fullMenu') ?>
-                </div>
-                <div class="topmenu">
-                    <?php echo $this->getChildHtml('topMenu') ?>
-                </div>
-            </nav>
-        </div>
-    </div>
-
+    <?php echo $this->getChildHtml('topSearch') ?>
 </header>
 

@@ -1,0 +1,60 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<div class="row showcase">
+<div class="col-sm-12 showcase-title"><h2 class="subtitle"><?php echo $this->__('New Products') ?></h2></div>
+<?php $_columnCount = 4 ?>
+    <ul class="products-grid">
+    <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+        <li class="item <?php if($i%$_columnCount==0): ?>first <?php endif; ?><?php if ($_columnCount == 4) : ?>col-sm-3<?php endif; ?><?php if ($_columnCount == 3) : ?>col-sm-4<?php endif; ?><?php if ($_columnCount == 2) : ?>col-sm-6<?php endif; ?>">
+            <div class="product-wrapper">
+            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(280) ?>" width="280" height="280" alt="<?php echo $this->escapeHtml($_product->getName()) ?>" /></a>
+            <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></h3>
+            <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+            <?php echo $this->getPriceHtml($_product, true, '-new') ?>
+                <div class="actions">
+                    <ul class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <li><a href="<?php echo $this->getAddToWishlistUrl($_product) ?>" class="link-wishlist"><i class="icon-heart"></i><span><?php echo $this->__('Add to Wishlist') ?></span></a></li>
+                        <?php endif; ?>
+                        <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+                            <li><a href="<?php echo $_compareUrl ?>" class="link-compare"><i class="icon-list2"></i><span><?php echo $this->__('Add to Compare') ?></span></a></li>
+                        <?php endif; ?>
+                    </ul>
+                    <?php if($_product->isSaleable()): ?>
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><i class="icon-cart2"></i><span><?php echo $this->__('Add to Cart') ?></span></button>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php $i++;?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+</div>
