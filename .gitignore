@@ -3,3 +3,5 @@ node_modules
 var/cache/ 
 var/log/ 
 var/session/ 
+app/etc/local.xml
+app/etc/localSERVER.xml
